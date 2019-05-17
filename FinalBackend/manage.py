@@ -3,7 +3,7 @@ import os
 import sys
 
 if __name__ == '__main__':
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'FinalBackend.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'BackendSite.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
