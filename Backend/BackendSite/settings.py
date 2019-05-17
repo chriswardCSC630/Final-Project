@@ -82,14 +82,13 @@ DATABASES = {
         'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '',
-        'PASSWORD': 'your_password',
     }
 }
 
 #used to connect heroku database
 #from https://devcenter.heroku.com/articles/heroku-postgresql#set-up-postgres-on-mac
 import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
@@ -128,11 +127,15 @@ USE_L10N = True
 USE_TZ = True
 
 
+# Media root created to allow users to upload images: https://wsvincent.com/django-image-uploads/
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/staticfiles/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'staticfiles'),
+    os.path.join(BASE_DIR, 'static'),
 )
