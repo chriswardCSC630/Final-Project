@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from . import settings
+from BackendApp.views import *
 
 urlpatterns = [
+    path('', requestHandlers.welcome),
     path('admin/', admin.site.urls),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #ERIC -> LINK FROM STACKOVERFLOW
