@@ -17,9 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from . import settings
-from BackendApp.views import *
+import BackendApp.views
 
 urlpatterns = [
-    path('', requestHandlers.welcome),
+    path('', welcome),
     path('admin/', admin.site.urls),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #ERIC -> LINK FROM STACKOVERFLOW
+    path('loginUser/', auth_login),
+    path('newUser/', newUser),
+    path('logoutUser/', auth_logout),
+    path('courses/', handleCourses),
+
+
+
+
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # from https://docs.djangoproject.com/en/2.2/howto/static-files/
