@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i1o-8N-odz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i1o-8N-odz">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--LoginView Controller-->
         <scene sceneID="aew-QW-UoZ">
             <objects>
-                <viewController id="i1o-8N-odz" userLabel="LoginView Controller" customClass="LoginViewController" customModule="Memories" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="i1o-8N-odz" userLabel="LoginView Controller" customClass="LoginViewController" customModule="MyCourseRequests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kxk-cQ-n7C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,6 +44,7 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="LoginButton:" destination="i1o-8N-odz" eventType="touchUpInside" id="QVj-yW-oeD"/>
+                                            <segue destination="dMt-h0-sTx" kind="presentation" id="5jR-ml-iIA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -54,7 +55,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to your Course Requests!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4j-iT-CnY">
-                                <rect key="frame" x="16" y="67" width="382" height="29"/>
+                                <rect key="frame" x="16" y="64" width="382" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -98,6 +99,7 @@
                             <constraint firstItem="BNt-pS-gbt" firstAttribute="centerX" secondItem="D4j-iT-CnY" secondAttribute="centerX" id="309-TS-Smc"/>
                             <constraint firstItem="BNt-pS-gbt" firstAttribute="top" secondItem="34Y-Kv-P23" secondAttribute="bottom" constant="18" id="4zE-HV-qWO"/>
                             <constraint firstItem="Ud3-Kr-B8e" firstAttribute="leading" secondItem="EYS-zD-9a3" secondAttribute="leading" constant="173" id="JRP-12-Ntt"/>
+                            <constraint firstItem="D4j-iT-CnY" firstAttribute="top" secondItem="EYS-zD-9a3" secondAttribute="top" constant="20" id="SZk-xV-9a7"/>
                             <constraint firstItem="Ud3-Kr-B8e" firstAttribute="top" secondItem="TTd-3b-DMU" secondAttribute="bottom" constant="8" symbolic="YES" id="Xcr-mI-dsa"/>
                             <constraint firstItem="BNt-pS-gbt" firstAttribute="centerX" secondItem="Ud3-Kr-B8e" secondAttribute="centerX" id="a9I-KO-hbW"/>
                             <constraint firstItem="34Y-Kv-P23" firstAttribute="top" secondItem="D4j-iT-CnY" secondAttribute="bottom" constant="58" id="cAQ-7Y-wlR"/>
@@ -125,10 +127,81 @@
             </objects>
             <point key="canvasLocation" x="-2446.376811594203" y="85.714285714285708"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="u0J-yt-ynu">
+            <objects>
+                <viewController id="dMt-h0-sTx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VoX-LM-EOR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S0Y-tF-bxK">
+                                <rect key="frame" x="20" y="152" width="374" height="664"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="675" id="YY6-zp-H1A"/>
+                                </constraints>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Course Request" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1h-dk-cbn">
+                                <rect key="frame" x="0.0" y="64" width="414" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3I-kF-YrE">
+                                <rect key="frame" x="0.0" y="103" width="414" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbb-nN-RHr">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Term:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awj-2Y-gPr">
+                                        <rect key="frame" x="314" y="0.0" width="100" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="jt8-UM-miK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Awj-2Y-gPr" firstAttribute="leading" secondItem="Xbb-nN-RHr" secondAttribute="trailing" constant="8" symbolic="YES" id="wAf-Kz-9Oh"/>
+                                </constraints>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qzM-Mv-qiE">
+                                <rect key="frame" x="20" y="824" width="374" height="29"/>
+                                <segments>
+                                    <segment title="Save"/>
+                                    <segment title="Submit"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WEC-Qq-rT9" firstAttribute="trailing" secondItem="J3I-kF-YrE" secondAttribute="trailing" id="6Zk-PQ-jna"/>
+                            <constraint firstItem="J3I-kF-YrE" firstAttribute="leading" secondItem="WEC-Qq-rT9" secondAttribute="leading" id="F0z-Ob-b5F"/>
+                            <constraint firstItem="WEC-Qq-rT9" firstAttribute="trailing" secondItem="h1h-dk-cbn" secondAttribute="trailing" id="PGV-sf-9rc"/>
+                            <constraint firstItem="J3I-kF-YrE" firstAttribute="top" secondItem="h1h-dk-cbn" secondAttribute="bottom" constant="10" id="cuz-Wg-LQ6"/>
+                            <constraint firstItem="h1h-dk-cbn" firstAttribute="leading" secondItem="WEC-Qq-rT9" secondAttribute="leading" id="lkY-lj-TWp"/>
+                            <constraint firstItem="qzM-Mv-qiE" firstAttribute="top" secondItem="S0Y-tF-bxK" secondAttribute="bottom" constant="5" id="nN7-R2-6Io"/>
+                            <constraint firstItem="S0Y-tF-bxK" firstAttribute="top" secondItem="J3I-kF-YrE" secondAttribute="bottom" constant="10" id="nvH-Xp-4T2"/>
+                            <constraint firstItem="WEC-Qq-rT9" firstAttribute="trailing" secondItem="S0Y-tF-bxK" secondAttribute="trailing" constant="20" id="ow3-Es-jqB"/>
+                            <constraint firstItem="qzM-Mv-qiE" firstAttribute="top" secondItem="S0Y-tF-bxK" secondAttribute="bottom" constant="10" id="qVR-ZJ-5Bc"/>
+                            <constraint firstItem="h1h-dk-cbn" firstAttribute="top" secondItem="WEC-Qq-rT9" secondAttribute="top" constant="20" id="sWX-WW-HVC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WEC-Qq-rT9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPl-72-9eK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1630.4347826086957" y="85.714285714285708"/>
+        </scene>
         <!--New User View Controller-->
         <scene sceneID="g8a-Y5-cJx">
             <objects>
-                <viewController id="jTf-r8-3aE" customClass="NewUserViewController" customModule="Memories" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jTf-r8-3aE" customClass="NewUserViewController" customModule="MyCourseRequests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2sI-jY-ZZc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -322,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vq8-EC-zZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1630.4347826086957" y="817.63392857142856"/>
+            <point key="canvasLocation" x="-1630" y="816"/>
         </scene>
     </scenes>
 </document>
