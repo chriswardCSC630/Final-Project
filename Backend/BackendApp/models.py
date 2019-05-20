@@ -41,8 +41,9 @@ class Sport(models.Model):
     teacher = models.CharField(max_length=30, default="none")
 
 class MusicLesson(models.Model):
-    #WHAT ARE THE OPTIONS FOR A MUSIC LESSON?
-    FILLER = models.CharField(max_length=30, default="none")
+    instrument = models.CharField(max_length=30, default="none")
+    teacher = models.CharField(max_length=30, default="none")
+    length = models.CharField(max_length=30, default="none")
 
 class CourseRequest(models.Model):
     # OneToOneField not allowed within ArrayField, thus 2D Array of CharField stores courses
