@@ -10,7 +10,6 @@ from django.contrib.auth import authenticate
 from . import serializers # serializers.py, which we created
 #from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-import openpyxl
 
 
 # request data will be storied in request's body
@@ -59,20 +58,7 @@ def newUser(request):
 # handle all requests at .../memories/
 @login_required # so that someone cannot access this method without having logged in
 def handleCourses(request):
-    excel_file = _____
-    wb = openpyxl.load_workbook(excel_file)
-    # getting a particular sheet by name out of many sheets
-    worksheet = wb["Sheet1"]
-    print(worksheet)
 
-    excel_data = list()
-    # iterating over the rows and
-    # getting value from each cell in row
-    for row in worksheet.iter_rows():
-        row_data = list()
-        for cell in row:
-            row_data.append(str(cell.value))
-        excel_data.append(row_data)
     # need to define this
     # question - would we load the data only here?
     return

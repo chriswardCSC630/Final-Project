@@ -26,7 +26,7 @@ urlpatterns = [
     path('newUser/', newUser),
     path('logoutUser/', auth_logout),
     path('courses/', handleCourses),
-
+    path('')
 
 
 
