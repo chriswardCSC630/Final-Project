@@ -16,9 +16,9 @@ from django.contrib.auth.decorators import login_required
 def welcome(request):
     return HttpResponse("Welcome")
 
-# handle all requests at .../login/
+# handle all requests at .../loginStudent/
 def auth_login(request):
-    # Only POSTing to .../login/
+    # Only POSTing to .../loginStudent/
     # from https://stackoverflow.com/questions/29780060/trying-to-parse-request-body-from-post-in-django
 
     if request.method == "POST":
@@ -33,8 +33,8 @@ def auth_login(request):
         return JsonResponse({'status':'false','message':"Invalid username and/or password"}, status=406)
 
 
-# handle all requests at .../newUser/
-def newUser(request):
+# handle all requests at .../newStudent/
+def newStudent(request):
      # Only POST
     content = QueryDict(request.body.decode('utf-8')).dict() #access content from request
     firstName = content["firstName"]
@@ -55,7 +55,6 @@ def newUser(request):
         new_student.save()
         return JsonResponse({'status':'true', 'message':"Your account has been created, please login", "hash_id": new_student.hash_id}, status=201) #201 -> new resource created
 
-# handle all requests at .../memories/
 @login_required # so that someone cannot access this method without having logged in
 def handleCourses(request):
 

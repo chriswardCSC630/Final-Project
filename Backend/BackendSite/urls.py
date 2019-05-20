@@ -22,12 +22,8 @@ import BackendApp.views
 urlpatterns = [
     path('', welcome),
     path('admin/', admin.site.urls),
-    path('loginUser/', auth_login),
-    path('newUser/', newUser),
-    path('logoutUser/', auth_logout),
+    path('loginStudent/', auth_login),
+    path('newStudent/', newUser),
+    path('logoutStudent/', auth_logout),
     path('courses/', handleCourses),
-    path('')
-
-
-
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # from https://docs.djangoproject.com/en/2.2/howto/static-files/
