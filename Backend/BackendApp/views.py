@@ -4,10 +4,9 @@ from django.views import View
 from django.http import HttpResponse, JsonResponse, QueryDict
 from django.urls import include, path
 from rest_framework import routers
-from API_proj2app.models import *
+from BackendApp.models import *
 from django.contrib.auth import login, logout
 from django.contrib.auth import authenticate
-from . import serializers # serializers.py, which we created
 #from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
@@ -72,7 +71,8 @@ def handleData(request):
         for sport in Sport.objects.all():
             sports[sport.id] = {"title": sport.title, "description": sport.description, "days": sport.days, "teacher": sport.teacher}
 
-        data = {courses, sports}
+        data = {'status':'true', 'message':"Got Got", 'courses':courses, 'sports':sports}
+
         # Return data to frontend
         return JsonResponse(data, status=200)
 

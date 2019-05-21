@@ -17,13 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from . import settings
-import BackendApp.views
+from BackendApp.views import *
 
 urlpatterns = [
     path('', welcome),
     path('admin/', admin.site.urls),
     path('loginStudent/', auth_login),
-    path('newStudent/', newUser),
+    path('newStudent/', newStudent),
     path('logoutStudent/', auth_logout),
     path('data/', handleData), # used for frontend to propogate courses and sports
     path('courseRequests/', handleCourseRequests),
