@@ -56,11 +56,54 @@ def newStudent(request):
         return JsonResponse({'status':'true', 'message':"Your account has been created, please login", "hash_id": new_student.hash_id}, status=201) #201 -> new resource created
 
 @login_required # so that someone cannot access this method without having logged in
-def handleCourses(request):
+def handleData(request):
+    hash_id = request.user.hash_id
+    # Decode request body content
+    content = QueryDict(request.body.decode('utf-8')).dict()
+    if request.method == "GET":
+        courses = {}
+        sports = {}
+        # Music lessons are text boxes filled in by user after they have spoken w/ music department
 
-    # need to define this
-    # question - would we load the data only here?
-    return
+        # Propogate memories to return to frontend
+        for course in Course.objects.all():
+            courses[course.id] = {"title": course.title, "period": course.period, "teacher": course.teacher, "section": course.section, "room": course.room, "days": course.days}
+
+        for sport in Sport.objects.all():
+            sports[sport.id] = {"title": sport.title, "description": sport.description, "days": sport.days, "teacher": sport.teacher}
+
+        data = {courses, sports}
+        # Return data to frontend
+        return JsonResponse(data, status=200)
+
+@login_required
+def handleCourseRequests(request):
+
+    hash_id = request.user.hash_id
+
+    if request.method == "GET":
+        data = {}
+
+        # Propogate memories to return to frontend
+        for courseRequest in CourseRequest.objects.filter(hash_id = hash_id):
+            data[courseRequest.id] = {"courses": courseRequest.courses, "topPriority": courseRequest.topPriority, "sport": courseRequest.sport, "musicLesson": courseRequest.musicLesson, "comments": courseRequest.comments}
+
+        # Return data to frontend
+        return JsonResponse(data, status=200)
+
+    if request.method == "POST":
+        # Decode request body content
+        content = QueryDict(request.body.decode('utf-8')).dict()
+
+        courses = content["courses"]
+        topPriority = content["topPriority"]
+        sport = content["sport"]
+        musicLesson = content["musicLesson"]
+        comments = content["comments"]
+
+        # Create a CourseRequest object and save its reference to access id
+        courseRequest = CourseRequest(hash_id = hash_id, courses = courses, topPriority = topPriority, sport = sport, musicLesson = musicLesson, comments = comments)
+        courseRequest.save()
 
 def auth_logout(request):
     logout(request)

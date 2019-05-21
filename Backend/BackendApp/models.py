@@ -34,12 +34,14 @@ class Course(models.Model):
     def __str__(self):
         return "[" + self.title + ", " + self.teacher + ", period " + self.period + "]"
 
+# Sports, like courses, should be a dropdown of sports offered
 class Sport(models.Model):
     title = models.CharField(max_length=30, default="none")
     description = models.TextField()
     days = models.CharField(max_length=255, default="none")
     teacher = models.CharField(max_length=30, default="none")
 
+# Music lessons should be custom-filled out by user after they have talked to music department
 class MusicLesson(models.Model):
     instrument = models.CharField(max_length=30, default="none")
     teacher = models.CharField(max_length=30, default="none")
@@ -47,6 +49,7 @@ class MusicLesson(models.Model):
 
 class CourseRequest(models.Model):
     # OneToOneField not allowed within ArrayField, thus 2D Array of CharField stores courses
+    hash_id = models.CharField(max_length=32)
     courses = ArrayField(ArrayField(models.CharField(max_length=30, default="none"))) # ArrayFields from https://stackoverflow.com/questions/44630642/its-possible-to-store-an-array-in-django-model
     topPriority = models.OneToOneField(Course, on_delete=models.PROTECT)
     sport = models.OneToOneField(Sport, on_delete=models.PROTECT)

@@ -25,5 +25,6 @@ urlpatterns = [
     path('loginStudent/', auth_login),
     path('newStudent/', newUser),
     path('logoutStudent/', auth_logout),
-    path('courses/', handleCourses),
+    path('data/', handleData), # used for frontend to propogate courses and sports
+    path('courseRequests/', handleCourseRequests),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # from https://docs.djangoproject.com/en/2.2/howto/static-files/
