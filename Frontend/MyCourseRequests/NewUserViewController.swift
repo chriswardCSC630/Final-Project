@@ -21,7 +21,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var confirmPassword: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     
-    let allFields = [firstName, lastName, email, advisorEmail, password, confirmPassword]
+    var allFields:[UITextField?] = []
     
     var isAuthenticated = false
     //    let BASE_API = "https://fullstack-project-2.herokuapp.com/"
@@ -38,6 +38,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        allFields = [firstName, lastName, email, advisorEmail, password, confirmPassword]
         saveButton.isEnabled = false
         firstName.addTarget(self, action: #selector(checkForValidFirstName), for: .editingChanged)
         lastName.addTarget(self, action: #selector(checkForValidLastName), for: .editingChanged)
@@ -54,7 +55,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func saveNewUser(_ sender: Any) {
         for field in allFields {
-            field.isEnabled = false
+            field!.isEnabled = false
         }
         
         
@@ -167,7 +168,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async {
             MyActivityIndicator.removeAll()
             for field in self.allFields {
-                self.field.isEnabled = true
+                field!.isEnabled = true
             }
             self.saveButton.isEnabled = false
             if self.errorLabel.text!.contains("email") { // crude way of determining if error involves username
@@ -184,7 +185,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async {
             MyActivityIndicator.removeAll()
             for field in self.allFields {
-                self.field.isEnabled = false
+                field!.isEnabled = false
             }
         }
 

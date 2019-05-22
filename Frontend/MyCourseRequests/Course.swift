@@ -15,13 +15,14 @@ class Course: NSObject, NSCoding {
     //MARK: Properties
     
     var title: String
-    var number: String // the 6-8 character key, i.e. INT540CN
-    var desc: String // short for description, everything other than the number above
     var period: Int
     var teacher: String
     var section: Int
     var room: String
     var days: String
+    
+    var number: String // the 6-8 character key, i.e. INT540CN
+    var desc: String // short for description, everything other than the number above
     
     //MARK: Archiving Points
     

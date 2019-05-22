@@ -10,6 +10,7 @@
 		072FDD16228DCD4D006CB5FB /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDD14228DCD4D006CB5FB /* NewUserViewController.swift */; };
 		072FDD17228DCD4D006CB5FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDD15228DCD4D006CB5FB /* LoginViewController.swift */; };
 		072FDD19228DD01D006CB5FB /* MyActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FDD18228DD01D006CB5FB /* MyActivityIndicator.swift */; };
+		07396717229592F400EDD2C1 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07396716229592F400EDD2C1 /* CourseTableViewCell.swift */; };
 		07FA9D1E228B90B70052084D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FA9D1D228B90B70052084D /* AppDelegate.swift */; };
 		07FA9D23228B90B70052084D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07FA9D21228B90B70052084D /* Main.storyboard */; };
 		07FA9D25228B90BA0052084D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07FA9D24228B90BA0052084D /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		072FDD14228DCD4D006CB5FB /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		072FDD15228DCD4D006CB5FB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		072FDD18228DD01D006CB5FB /* MyActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityIndicator.swift; sourceTree = "<group>"; };
+		07396716229592F400EDD2C1 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		07FA9D1A228B90B70052084D /* MyCourseRequests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCourseRequests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FA9D1D228B90B70052084D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07FA9D22228B90B70052084D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				07FA9D1D228B90B70052084D /* AppDelegate.swift */,
 				07FA9D2F228B92330052084D /* Course.swift */,
 				07FA9D21228B90B70052084D /* Main.storyboard */,
+				07396716229592F400EDD2C1 /* CourseTableViewCell.swift */,
 				072FDD15228DCD4D006CB5FB /* LoginViewController.swift */,
 				072FDD14228DCD4D006CB5FB /* NewUserViewController.swift */,
 				072FDD18228DD01D006CB5FB /* MyActivityIndicator.swift */,
@@ -146,6 +149,7 @@
 			files = (
 				07FA9D30228B92330052084D /* Course.swift in Sources */,
 				072FDD16228DCD4D006CB5FB /* NewUserViewController.swift in Sources */,
+				07396717229592F400EDD2C1 /* CourseTableViewCell.swift in Sources */,
 				072FDD19228DD01D006CB5FB /* MyActivityIndicator.swift in Sources */,
 				072FDD17228DCD4D006CB5FB /* LoginViewController.swift in Sources */,
 				07FA9D1E228B90B70052084D /* AppDelegate.swift in Sources */,
