@@ -9,6 +9,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth import authenticate
 #from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from datetime import datetime
 
 
 # request data will be storied in request's body
@@ -95,6 +96,15 @@ def handleCourseRequests(request):
         # Decode request body content
         content = QueryDict(request.body.decode('utf-8')).dict()
 
+        # Determine a string representation of the term
+        date = datetime.date()
+        if 3 <= date.month <= 9:
+            term = "Fall '" + str(date.year%100)
+        elif 10 <= date.month <= 12:
+            term = "Winter '" + str((date.year + 1)%100)
+        else:
+            term = "Spring '" + str(date.year%100)
+
         courses = content["courses"]
         topPriority = content["topPriority"]
         sport = content["sport"]
@@ -102,7 +112,7 @@ def handleCourseRequests(request):
         comments = content["comments"]
 
         # Create a CourseRequest object and save its reference to access id
-        courseRequest = CourseRequest(hash_id = hash_id, courses = courses, topPriority = topPriority, sport = sport, musicLesson = musicLesson, comments = comments)
+        courseRequest = CourseRequest(hash_id = hash_id, term = term, courses = courses, topPriority = topPriority, sport = sport, musicLesson = musicLesson, comments = comments)
         courseRequest.save()
 
 def auth_logout(request):
