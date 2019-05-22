@@ -17,10 +17,10 @@ class Student(AbstractUser):
     advisorEmail = models.CharField(max_length=30, default="none")
 
     # studentEmail and password already in AbstractUser
-
+        # studentEmail is called username
     # for printing a Student object
     def __str__(self):
-        return self.username + " name: " + self.firstname + " " + self.lastname + ""
+        return self.username + " name: " + self.firstName + " " + self.lastName + ""
 
 class Course(models.Model):
     title = models.CharField(max_length=90, default="none")
@@ -32,14 +32,14 @@ class Course(models.Model):
     updated = models.CharField(max_length=60, default="unknown")
     # for printing a Course object
     def __str__(self):
-        return self.title + " (" + self.teacher + " | period " + self.period + ")"
+        return self.title + " (" + self.id + ")"
 
 # Sports, like courses, should be a dropdown of sports offered
 class Sport(models.Model):
-    title = models.CharField(max_length=30, default="none")
+    title = models.TextField()
     description = models.TextField()
-    days = models.CharField(max_length=255, default="none")
-    teacher = models.CharField(max_length=30, default="none")
+    days = models.TextField()
+    teacher = models.TextField()
     def __str__(self):
         return self.title + " (" + self.description + ")"
 
@@ -55,9 +55,13 @@ class CourseRequest(models.Model):
     # OneToOneField not allowed within ArrayField, thus 2D Array of CharField stores courses
     hash_id = models.CharField(max_length=32)
     courses = ArrayField(ArrayField(models.CharField(max_length=30, default="none"))) # ArrayFields from https://stackoverflow.com/questions/44630642/its-possible-to-store-an-array-in-django-model
-    topPriority = models.OneToOneField(Course, on_delete=models.PROTECT)
-    sport = models.OneToOneField(Sport, on_delete=models.PROTECT)
-    musicLesson = models.OneToOneField(MusicLesson, on_delete=models.PROTECT)
+    # should correspond to the id of the course
+    topPriority = models.IntegerField(default=-1)
+    sixthCourse = models.IntegerField(default=-1) #models.OneToOneField(Course, on_delete=models.PROTECT)
+    # should correspond to the id of the sport
+    sport = models.IntegerField(default=-1)
+    # should correspond to the id of the music lesson
+    musicLesson = models.IntegerField(default=-1)
     comments = models.TextField()
     def __str(self):
         return self.hash_id
