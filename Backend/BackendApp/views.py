@@ -24,7 +24,7 @@ def auth_login(request):
     if request.method == "POST":
         content = QueryDict(request.body.decode('utf-8')).dict() # content should be dict now
         student = django.contrib.auth.authenticate(username=content["username"], password=content["password"])
-        if user:
+        if student:
             login(request,student) #django's built in
             # serializer = serializers.UserSerializer(user)
             # print(serializer)
@@ -37,20 +37,25 @@ def auth_login(request):
 def newStudent(request):
      # Only POST
     content = QueryDict(request.body.decode('utf-8')).dict() #access content from request
-    firstName = content["firstName"]
-    lastName = content["lastName"]
-    studentEmail = content["studentEmail"]
-    advisorEmail = content["advisorEmail"]
-    password = content["password"]
+
+    try:
+        firstName = content["firstName"]
+        lastName = content["lastName"]
+        username = content["studentEmail"]
+        advisorEmail = content["advisorEmail"]
+        password = content["password"]
+    except:
+        return JsonResponse({'status':'false', 'message':"Could not parse params dictionary"}, status=401)
+
     if request.method == "POST":
-        if User.objects.filter(username = username).exists():
+        if Students.objects.filter(username = username).exists():
             return JsonResponse({'status':'false','message':"This student email is already in use"}, status=406)
         try:
-            new_student = Student(firstName = firstName, lastName = lastName, studentEmail = studentEmail,
+            new_student = Student(firstName = firstName, lastName = lastName, username = username,
                                     advisorEmail = advisorEmail)
             new_student.set_password(password)
         except:
-            return JsonResponse({'status':'false', 'message':"Invalid username or password"}, status=406)
+            return JsonResponse({'status':'false', 'message':"Could not create account, please try again"}, status=406)
         # serializer = serializers.UserSerializer(new_user)
         new_student.save()
         return JsonResponse({'status':'true', 'message':"Your account has been created, please login", "hash_id": new_student.hash_id}, status=201) #201 -> new resource created
@@ -105,15 +110,32 @@ def handleCourseRequests(request):
         else:
             term = "Spring '" + str(date.year%100)
 
-        courses = content["courses"]
-        topPriority = content["topPriority"]
-        sport = content["sport"]
-        musicLesson = content["musicLesson"]
-        comments = content["comments"]
+
+        try:
+            courses = content["courses"] # should be an array of the courses' IDs
+            sixthCourse = content["sixthCourse"]
+            topPriority = content["topPriority"]
+            sport = content["sport"] # should be the sport's ID
+            mL = content["musicLesson"] # should be a dict in the proper musiclesson format
+            comments = content["comments"]
+        except:
+            return JsonResponse({'status':'false', 'message':"Unable to parse dictionary of params"}, status=401)
+
+        try:
+            musicLesson = MusicLession(instrument=mL["instrument"], teacher=mL["teacher"],length=int(mL["length"]))
+            musicLesson.save()
+        except:
+            musicLesson = -1
+            return JsonResponse({'status':'false', 'message':"Unable to process music lesson"}, status=401)
 
         # Create a CourseRequest object and save its reference to access id
-        courseRequest = CourseRequest(hash_id = hash_id, term = term, courses = courses, topPriority = topPriority, sport = sport, musicLesson = musicLesson, comments = comments)
-        courseRequest.save()
+        try:
+            courseRequest = CourseRequest(hash_id = hash_id, term = term, courses = courses, topPriority = topPriority, sport = sport, musicLesson = musicLesson.id, comments = comments)
+            courseRequest.save()
+        except:
+            return JsonResponse({'status':'false', 'message':"Unable to save course request"}, status=401)
+
+        returning = JsonResponse({'status':'true', 'message':"Your course request has been POSTed"}, status=200)
 
 def auth_logout(request):
     logout(request)

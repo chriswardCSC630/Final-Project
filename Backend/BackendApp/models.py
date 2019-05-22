@@ -43,12 +43,12 @@ class Sport(models.Model):
     def __str__(self):
         return self.title + " (" + self.description + ")"
 
+
 # Music lessons should be custom-filled out by user after they have talked to music department
 class MusicLesson(models.Model):
-    instrument = models.CharField(max_length=30, default="none")
-    teacher = models.CharField(max_length=30, default="none")
-    length = models.CharField(max_length=30, default="none")
-    def __str__(self):
+    instrument = models.CharField(max_length=45, default="none")
+    teacher = models.CharField(max_length=60, default="none")
+    length = models.IntegerField(default=-1) 
         return self.instrument + " (" + self.teacher + " | length: " + self.length + ")"
 
 class CourseRequest(models.Model):
