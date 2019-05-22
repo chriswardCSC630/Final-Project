@@ -55,7 +55,8 @@ class CourseRequest(models.Model):
     # OneToOneField not allowed within ArrayField, thus 2D Array of CharField stores courses
     hash_id = models.CharField(max_length=32)
     term = models.CharField(max_length=30)
-    courses = ArrayField(ArrayField(models.CharField(max_length=30, default="none"))) # ArrayFields from https://stackoverflow.com/questions/44630642/its-possible-to-store-an-array-in-django-model
+    courses = ArrayField(models.IntegerField(default=-1))
+    #courses = ArrayField(ArrayField(models.CharField(max_length=30, default="none"))) # ArrayFields from https://stackoverflow.com/questions/44630642/its-possible-to-store-an-array-in-django-model
     # should correspond to the id of the course
     topPriority = models.IntegerField(default=-1)
     sixthCourse = models.IntegerField(default=-1) #models.OneToOneField(Course, on_delete=models.PROTECT)
