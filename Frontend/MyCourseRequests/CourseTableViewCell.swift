@@ -10,6 +10,17 @@ import UIKit
 
 class CourseTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var period: UILabel!
+    @IBOutlet weak var mainCourse: UILabel!
+    
+    @IBOutlet weak var alt1: UILabel!
+    @IBOutlet weak var alt2: UILabel!
+    @IBOutlet weak var alt3: UILabel!
+    
+    @IBOutlet weak var alt1Period: UILabel!
+    @IBOutlet weak var alt2Period: UILabel!
+    @IBOutlet weak var alt3Period: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

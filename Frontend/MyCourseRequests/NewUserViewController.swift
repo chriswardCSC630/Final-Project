@@ -25,7 +25,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
     
     var isAuthenticated = false
     //    let BASE_API = "https://fullstack-project-2.herokuapp.com/"
-    let BASE_API = "http://localhost:8000/"
+    let BASE_API = GLOBAL.BASE_API
     
     let badColor: UIColor = UIColor(displayP3Red: 1, green: 0, blue: 0, alpha: 0.3)
     let goodColor: UIColor = UIColor(displayP3Red: 0, green: 1, blue: 0, alpha: 0.3)
@@ -76,7 +76,7 @@ class NewUserViewController: UIViewController, UITextFieldDelegate {
         
         MyActivityIndicator.activityIndicator(title: "Securely creating user...", view: self.view)
         
-        let url = URL(string: BASE_API + "newUser/")
+        let url = URL(string: BASE_API + "newStudent/")
         let session = URLSession.shared
         
         let request = NSMutableURLRequest(url: url!)

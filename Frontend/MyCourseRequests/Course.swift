@@ -14,10 +14,12 @@ class Course: NSObject, NSCoding {
     
     //MARK: Properties
     
+    var id: Int
+    
     var title: String
-    var period: Int
+    var period: String
     var teacher: String
-    var section: Int
+    var section: String
     var room: String
     var days: String
     
@@ -33,6 +35,7 @@ class Course: NSObject, NSCoding {
     //MARK: Types
     
     struct PropertyKey{
+        static let id = "id"
         static let title = "title"
         static let period = "period"
         static let teacher = "teacher"
@@ -42,15 +45,16 @@ class Course: NSObject, NSCoding {
     }
     
     //MARK: Initializers
-    init?(title: String, period: Int, teacher: String, section: Int, room: String, days: String){
+    init?(id: Int, title: String, period: String, teacher: String, section: String, room: String, days: String){
         // Will expect to be initialized with all of the above in the proper formats, as read from the excel spreadsheet
         
         // None of the above must not be empty or negative
-        guard !(title.isEmpty || period > 0 || teacher.isEmpty || section > 0 || room.isEmpty || days.isEmpty) else {
+        guard !(title.isEmpty || period.isEmpty || teacher.isEmpty || section.isEmpty || room.isEmpty || days.isEmpty) else {
             return nil
         }
         
         // Initialize Stored Properties
+        self.id = id
         self.title = title
         if let i = title.firstIndex(of: ":") {
             // substring from https://useyourloaf.com/blog/swift-string-cheat-sheet/
@@ -81,13 +85,20 @@ class Course: NSObject, NSCoding {
     
     required convenience init?(coder aDecoder: NSCoder) {
         // The title is required. If we cannot decode a title string, the initializer should fail.
+        
+        guard let id = aDecoder.decodeObject(forKey: PropertyKey.id) as? Int
+            else {
+                os_log("Unable to decode the id for a Course object.", log: OSLog.default,
+                       type: .debug)
+                return nil
+        }
         guard let title = aDecoder.decodeObject(forKey: PropertyKey.title) as? String
             else {
                 os_log("Unable to decode the title for a Course object.", log: OSLog.default,
                        type: .debug)
                 return nil
         }
-        guard let period = aDecoder.decodeObject(forKey: PropertyKey.period) as? Int
+        guard let period = aDecoder.decodeObject(forKey: PropertyKey.period) as? String
             else {
                 os_log("Unable to decode the period for a Course object.", log: OSLog.default,
                        type: .debug)
@@ -99,7 +110,7 @@ class Course: NSObject, NSCoding {
                        type: .debug)
                 return nil
         }
-        guard let section = aDecoder.decodeObject(forKey: PropertyKey.section) as? Int
+        guard let section = aDecoder.decodeObject(forKey: PropertyKey.section) as? String
             else {
                 os_log("Unable to decode the section for a Course object.", log: OSLog.default,
                        type: .debug)
@@ -122,7 +133,7 @@ class Course: NSObject, NSCoding {
 
         
         // Must call designated initializer.
-        self.init(title: title, period: period, teacher: teacher, section: section, room: room, days: days)
+        self.init(id: id, title: title, period: period, teacher: teacher, section: section, room: room, days: days)
     }
 }
 

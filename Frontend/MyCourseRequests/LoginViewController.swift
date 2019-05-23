@@ -20,8 +20,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var isAuthenticated = false
 //    let BASE_API = "https://fullstack-project-2.herokuapp.com/"
-    let BASE_API = "http://localhost:8000/"
+    let BASE_API = GLOBAL.BASE_API
     
+    var hash_id = ""
 
     
     override func viewDidLoad() {
@@ -156,7 +157,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             
             let preferences = UserDefaults.standard
-            preferences.set(server_response["hash_id"], forKey: "hash_id") // updates userDefaults to this serializer, which stores the user's hash_id
+            guard let hash_id = server_response["hash_id"] as? String else {
+                print("Error: hash_id in incorrect format")
+                return
+            }
+            guard let name = server_response["name"] as? String else {
+                print("Error: name in incorrect format")
+                return
+            }
+            guard let term = server_response["term"] as? String else {
+                print("Error: term in incorrect format")
+                return
+            }
+            preferences.set(hash_id, forKey: "hash_id") // updates userDefaults to this hash_id, which stores the user's hash_id
+            preferences.set(name, forKey:"name")
+            preferences.set(term, forKey:"term")
+            self.hash_id = hash_id
             DispatchQueue.main.async (
                 execute: self.LoginDone
             )
@@ -208,21 +224,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-/*
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
         if segue.identifier == "userLoggedInSegue" {
-            if !self.isAuthenticated {
+            guard let destination = segue.destination as? CRViewController else {
+                print("Destination is not CRViewController")
                 return
             }
+            
+//            destination.hash_id = self.hash_id
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
             
     }
- */
+ 
     
  
     

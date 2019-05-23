@@ -28,7 +28,14 @@ def auth_login(request):
             login(request,student) #django's built in
             # serializer = serializers.UserSerializer(user)
             # print(serializer)
-            return JsonResponse({'status':'true','message':"Logged in", "hash_id":student.hash_id}, status=200)
+            date = datetime.date()
+            if 3 <= date.month <= 9:
+                term = "Fall '" + str(date.year%100)
+            elif 10 <= date.month <= 12:
+                term = "Winter '" + str((date.year + 1)%100)
+            else:
+                term = "Spring '" + str(date.year%100)
+            return JsonResponse({'status':'true','message':"Logged in", "hash_id":student.hash_id, "name":student.firstName + student.lastName, "term":term}, status=200)
 
         return JsonResponse({'status':'false','message':"Invalid username and/or password"}, status=406)
 
@@ -62,7 +69,8 @@ def newStudent(request):
 
 @login_required # so that someone cannot access this method without having logged in
 def handleData(request):
-    hash_id = request.user.hash_id
+    print(request.META)
+    hash_id = request.student.hash_id
     # Decode request body content
     content = QueryDict(request.body.decode('utf-8')).dict()
     if request.method == "GET":
@@ -77,7 +85,7 @@ def handleData(request):
         for sport in Sport.objects.all():
             sports[sport.id] = {"title": sport.title, "description": sport.description, "days": sport.days, "teacher": sport.teacher}
 
-        data = {'status':'true', 'message':"Got Got", 'courses':courses, 'sports':sports}
+        data = {'status':'true', 'message':"Got GOT", 'courses':courses, 'sports':sports}
 
         # Return data to frontend
         return JsonResponse(data, status=200)

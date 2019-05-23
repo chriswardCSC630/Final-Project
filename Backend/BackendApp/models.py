@@ -48,7 +48,8 @@ class Sport(models.Model):
 class MusicLesson(models.Model):
     instrument = models.CharField(max_length=45, default="none")
     teacher = models.CharField(max_length=60, default="none")
-    length = models.IntegerField(default=-1) 
+    length = models.IntegerField(default=-1)
+    def __str__(self):
         return self.instrument + " (" + self.teacher + " | length: " + self.length + ")"
 
 class CourseRequest(models.Model):
