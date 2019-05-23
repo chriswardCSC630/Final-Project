@@ -7,22 +7,23 @@
 //
 
 import UIKit
+import CoreData
 
 // INSTRUCTIONS FROM: https://medium.freecodecamp.org/how-to-create-an-autocompletion-uitextfield-using-coredata-in-swift-dbedad03ea3d
 
 class CustomSearchTextField: UITextField, UITableViewDelegate, UITableViewDataSource {
     
-    var dataList: [Course] = []
+    var dataList: [Courses] = [Courses]()
+    var resultsList: [CourseSearchItem] = [CourseSearchItem]()
     var tableView: UITableView?
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
     
     // Connecting the new element to the parent view
     open override func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
         tableView?.removeFromSuperview()
-    }
-    
-    override open func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
     }
     
     override open func layoutSubviews() {
@@ -46,6 +47,8 @@ class CustomSearchTextField: UITextField, UITableViewDelegate, UITableViewDataSo
         updateSearchTableView()
     }
     
+    
+    
     // MARK: TableViewDataSource methods
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -60,14 +63,14 @@ class CustomSearchTextField: UITextField, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomSearchTextFieldCell", for: indexPath) as UITableViewCell
         cell.backgroundColor = UIColor.clear
-        cell.textLabel?.text = dataList[indexPath.row]
+        cell.textLabel?.text = dataList[indexPath.row].title
         return cell
     }
     
     // MARK: TableViewDelegate methods
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected row")
-        self.text = dataList[indexPath.row]
+        self.text = dataList[indexPath.row].title
         tableView.isHidden = true
         self.endEditing(true)
     }
@@ -108,4 +111,91 @@ class CustomSearchTextField: UITextField, UITableViewDelegate, UITableViewDataSo
             tableView.reloadData()
         }
     }
+    override open func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        
+        self.addTarget(self, action: #selector(CustomSearchTextField.textFieldDidChange), for: .editingChanged)
+        self.addTarget(self, action: #selector(CustomSearchTextField.textFieldDidBeginEditing), for: .editingDidBegin)
+        self.addTarget(self, action: #selector(CustomSearchTextField.textFieldDidEndEditing), for: .editingDidEnd)
+        self.addTarget(self, action: #selector(CustomSearchTextField.textFieldDidEndEditingOnExit), for: .editingDidEndOnExit)
+    }
+    
+    // MARK : Filtering methods
+    fileprivate func filter() {
+        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", self.text!)
+        let request : NSFetchRequest<Courses> = Courses.fetchRequest()
+        request.predicate = predicate
+        
+        //Loading the data into the dataList
+        loadItems(withRequest : request)
+        
+        resultsList = []
+        
+        for i in 0 ..< dataList.count {
+            let item = CourseSearchItem(id: Int(dataList[i].id), title: dataList[i].title!, period: dataList[i].period!, teacher: dataList[i].teacher!, section: dataList[i].section!, room: dataList[i].room!, days: dataList[i].days!)!
+    
+            
+            let titleFilterRange = (item.title as NSString).range(of: text!, options: .caseInsensitive)
+            
+            if titleFilterRange.location != NSNotFound {
+                item.attributedTitle! = NSMutableAttributedString(string: item.title)
+
+                
+                item.attributedTitle!.setAttributes([.font: UIFont.boldSystemFont(ofSize: 17)], range: titleFilterRange)
+                resultsList.append(item)
+            }
+        }
+        tableView?.reloadData()
+    }
+
+    
+    //////////////////////////////////////////////////////////////////////////////
+    // Data Handling methods
+    //////////////////////////////////////////////////////////////////////////////
+    
+    
+    // MARK: CoreData manipulation methods
+    
+    // Don't need this function in this case
+    func saveItems() {
+        print("Saving items")
+        do {
+            try context.save()
+        } catch {
+            print("Error while saving items: \(error)")
+        }
+    }
+    
+    func loadItems(withRequest request : NSFetchRequest<Courses>) {
+        print("loading items")
+        do {
+            dataList = try context.fetch(request)
+        } catch {
+            print("Error while fetching data: \(error)")
+        }
+    }
+    
+    
+    //////////////////////////////////////////////////////////////////////////////
+    // Text Field related methods
+    //////////////////////////////////////////////////////////////////////////////
+    
+    @objc func textFieldDidChange(){
+        print("Text changed ...")
+        updateSearchTableView()
+        
+    }
+    
+    @objc public func textFieldDidBeginEditing() {
+        print("Begin Editing")
+    }
+    
+    @objc func textFieldDidEndEditing() {
+        print("End editing")
+    }
+    
+    @objc func textFieldDidEndEditingOnExit() {
+        print("End on Exit")
+    }
+
 }

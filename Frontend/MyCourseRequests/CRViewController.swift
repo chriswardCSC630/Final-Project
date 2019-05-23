@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
-class CRViewController: UIViewController, UITableViewDataSource {
-
+//class CRViewController: UIViewController, UITableViewDataSource {
+/*
     // Labels
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var term: UILabel!
@@ -24,20 +25,18 @@ class CRViewController: UIViewController, UITableViewDataSource {
     // Segmented Control
     @IBOutlet weak var saveSubmitControl: UISegmentedControl!
     
-    var allCourses:[Course] = []
+//    var allCourses:[Course] = []
     var allSports:[Sport] = []
     
-    var courseGroups:[[Course]] = []
+//    var courseGroups:[[Course]] = []
     var hasLoaded = false
-    let BASE_API = GLOBAL.BASE_API
-    var hash_id = ""
-
     
+    var hash_id = ""
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        if !hasLoaded {
-            loadCourses()
-        }
+        
 
         hash_id = UserDefaults.standard.string(forKey: "hash_id") ?? ""
         name.text = UserDefaults.standard.string(forKey: "name") ?? "Unknown name"
@@ -46,113 +45,16 @@ class CRViewController: UIViewController, UITableViewDataSource {
         courseTableView.dataSource = self
         // Do any additional setup after loading the view.
         
-        if courseGroups.count >= 5 {
-            addNewCourseButton.isEnabled = false
-            plusNewCourseButton.isEnabled = false
-        }
-        else {
-            addNewCourseButton.isEnabled = true
-            plusNewCourseButton.isEnabled = true
-        }
+//        if courseGroups.count >= 5 {
+//            addNewCourseButton.isEnabled = false
+//            plusNewCourseButton.isEnabled = false
+//        }
+//        else {
+//            addNewCourseButton.isEnabled = true
+//            plusNewCourseButton.isEnabled = true
+//        }
     }
   
-    
-    
-    private func loadCourses() {
-        MyActivityIndicator.activityIndicator(title: "Retrieving courses...", view: self.view)
-        // GET the courses from the database
-        makeURLRequest(urlString: BASE_API + "data/", method: "GET")
-        
-    }
-    
-    func populateCoursesSports(data:NSDictionary) {
-        guard let courses = data["courses"] as? NSDictionary else {
-            print("Error: server response had no courses key")
-            return
-        }
-        guard let sports = data["sports"] as? NSDictionary else {
-            print("Error: server response had no sports key")
-            return
-        }
-        
-        for id in courses.allKeys {
-            guard let currentCourse = courses[id] as? NSDictionary else {
-                print("invalid response format: content")
-                return
-            }
-            // the data will be arranged by keys
-            guard let title = currentCourse["title"] as? String else {
-                print("invalid response format: title")
-                return
-            }
-            
-            guard let period = currentCourse["period"] as? String else {
-                print("invalid response format: period")
-                return
-            }
-            guard let section = currentCourse["section"] as? String else {
-                print("invalid response format: section")
-                return
-            }
-            
-            guard let teacher = currentCourse["teacher"] as? String else {
-                print("invalid response format: teacher")
-                return
-            }
-            guard let room = currentCourse["room"] as? String else {
-                print("invalid response format: room")
-                return
-            }
-            guard let days = currentCourse["days"] as? String else {
-                print("invalid response format: days")
-                return
-            }
-            guard let id = id as? Int else {
-                print("invalid response format: id")
-                return
-            }
-            let newCourse = Course(id:id, title: title, period: period, teacher: teacher, section: section, room: room, days: days)
-            allCourses.append(newCourse!)
-        }
-        
-        for id in sports.allKeys {
-            guard let currentSport = sports[id] as? NSDictionary else {
-                print("invalid response format: content")
-                return
-            }
-            // the data will be arranged by keys
-            guard let title = currentSport["title"] as? String else {
-                print("invalid response format: title")
-                return
-            }
-            guard let descr = currentSport["description"] as? String else {
-                print("invalid response format: description")
-                return
-            }
-            guard let days = currentSport["days"] as? String else {
-                print("invalid response format: days")
-                return
-            }
-            guard let teacher = currentSport["teacher"] as? String else {
-                print("invalid response format: teacher")
-                return
-            }
-            guard let id = id as? Int else {
-                print("invalid response format: id")
-                return
-            }
-            let newSport = Sport(id:id, title: title, descr: descr, days: days, teacher: teacher)
-            allSports.append(newSport!)
-        }
-        
-        self.hasLoaded = true // so that it doesn't load every time this view loads: only once
-        print("Loading complete.")
-        
-        DispatchQueue.main.async {
-            MyActivityIndicator.removeAll()
-        }
-    }
-    
     
     func makeURLRequest(urlString: String, method: String, paramToSend: String? = "") {
         
@@ -213,9 +115,6 @@ class CRViewController: UIViewController, UITableViewDataSource {
                 return
             }
             
-            if (method == "GET") {
-                self.populateCoursesSports(data: serverResponse)
-            }
 //            else if (method == "POST") {
 //                if memory == nil {
 //                    print("Memory passed in incompatible format -- POST")
@@ -328,3 +227,4 @@ class CRViewController: UIViewController, UITableViewDataSource {
     */
 
 }
+*/

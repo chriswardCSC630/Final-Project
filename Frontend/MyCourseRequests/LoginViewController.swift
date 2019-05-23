@@ -225,6 +225,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -241,6 +242,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
             
     }
+ */
  
     
  

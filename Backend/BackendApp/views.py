@@ -67,10 +67,11 @@ def newStudent(request):
         new_student.save()
         return JsonResponse({'status':'true', 'message':"Your account has been created, please login", "hash_id": new_student.hash_id}, status=201) #201 -> new resource created
 
-@login_required # so that someone cannot access this method without having logged in
+# WE MAY WANT TO UNCOMMENT THIS LATER, BUT FOR NOW WE NEED IT GONE
+# @login_required # so that someone cannot access this method without having logged in
 def handleData(request):
-    print(request.META)
-    hash_id = request.student.hash_id
+    # print(request.META)
+    # hash_id = request.student.hash_id
     # Decode request body content
     content = QueryDict(request.body.decode('utf-8')).dict()
     if request.method == "GET":
