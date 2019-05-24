@@ -23,6 +23,8 @@
 		07FA9D25228B90BA0052084D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07FA9D24228B90BA0052084D /* Assets.xcassets */; };
 		07FA9D28228B90BA0052084D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07FA9D26228B90BA0052084D /* LaunchScreen.storyboard */; };
 		07FA9D30228B92330052084D /* CourseSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FA9D2F228B92330052084D /* CourseSearchItem.swift */; };
+		24F45629229771DA006A6ED5 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F45628229771DA006A6ED5 /* LaunchScreenViewController.swift */; };
+		24F4562B229771E6006A6ED5 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4562A229771E6006A6ED5 /* ProgressBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		07FA9D27228B90BA0052084D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07FA9D29228B90BA0052084D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07FA9D2F228B92330052084D /* CourseSearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSearchItem.swift; sourceTree = "<group>"; };
+		24F45628229771DA006A6ED5 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		24F4562A229771E6006A6ED5 /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 				07396716229592F400EDD2C1 /* CourseTableViewCell.swift */,
 				072FDD15228DCD4D006CB5FB /* LoginViewController.swift */,
 				072FDD14228DCD4D006CB5FB /* NewUserViewController.swift */,
+				24F4562A229771E6006A6ED5 /* ProgressBarView.swift */,
+				24F45628229771DA006A6ED5 /* LaunchScreenViewController.swift */,
 				072FDD18228DD01D006CB5FB /* MyActivityIndicator.swift */,
 				07FA9D24228B90BA0052084D /* Assets.xcassets */,
 				07FA9D26228B90BA0052084D /* LaunchScreen.storyboard */,
@@ -172,8 +178,10 @@
 				073967212296E65400EDD2C1 /* Sport.swift in Sources */,
 				0739671D2296D27800EDD2C1 /* CRViewController.swift in Sources */,
 				0739674D2297133700EDD2C1 /* Populate_Local_Data.swift in Sources */,
+				24F4562B229771E6006A6ED5 /* ProgressBarView.swift in Sources */,
 				07FA9D30228B92330052084D /* CourseSearchItem.swift in Sources */,
 				07396749229704A000EDD2C1 /* MyData.xcdatamodeld in Sources */,
+				24F45629229771DA006A6ED5 /* LaunchScreenViewController.swift in Sources */,
 				072FDD16228DCD4D006CB5FB /* NewUserViewController.swift in Sources */,
 				07396717229592F400EDD2C1 /* CourseTableViewCell.swift in Sources */,
 				072FDD19228DD01D006CB5FB /* MyActivityIndicator.swift in Sources */,
