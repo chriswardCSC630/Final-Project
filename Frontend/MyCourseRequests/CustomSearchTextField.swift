@@ -49,23 +49,23 @@ class CustomSearchTextField: UITextField, UITableViewDelegate, UITableViewDataSo
     //////////////////////////////////////////////////////////////////////////////
     
     @objc open func textFieldDidChange(){
-        print("Text changed ...")
+//        print("Text changed ...")
         filter()
         updateSearchTableView()
         tableView?.isHidden = false
     }
     
     @objc open func textFieldDidBeginEditing() {
-        print("Begin Editing")
+//        print("Begin Editing")
     }
     
     @objc open func textFieldDidEndEditing() {
-        print("End editing")
+//        print("End editing")
         
     }
     
     @objc open func textFieldDidEndEditingOnExit() {
-        print("End on Exit")
+//        print("End on Exit")
     }
     
     //////////////////////////////////////////////////////////////////////////////
@@ -77,7 +77,7 @@ class CustomSearchTextField: UITextField, UITableViewDelegate, UITableViewDataSo
     
     // Don't need this function in this case
     func saveItems() {
-        print("Saving items")
+//        print("Saving items")
         do {
             try context.save()
         } catch {
@@ -86,7 +86,7 @@ class CustomSearchTextField: UITextField, UITableViewDelegate, UITableViewDataSo
     }
     
     func loadItems(withRequest request : NSFetchRequest<Courses>) {
-        print("loading items")
+//        print("loading items")
         do {
             dataList = try context.fetch(request)
         } catch {
@@ -148,7 +148,7 @@ class CustomSearchTextField: UITextField, UITableViewDelegate, UITableViewDataSo
             
         } else {
             //addData()
-            print("tableView created")
+//            print("tableView created")
             tableView = UITableView(frame: CGRect.zero)
         }
         
@@ -200,7 +200,7 @@ class CustomSearchTextField: UITextField, UITableViewDelegate, UITableViewDataSo
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(resultsList.count)
+//        print(resultsList.count)
         return resultsList.count
     }
     
@@ -215,9 +215,9 @@ class CustomSearchTextField: UITextField, UITableViewDelegate, UITableViewDataSo
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected row")
+//        print("selected row")
         let thisCourse = resultsList[indexPath.row]
-        NewCourseViewController.setMainCourse(course: thisCourse)
+        (self.superview as? NewCourseView)?.updateCourse(thisCourse)
         self.text = thisCourse.title
         self.isEnabled = false
         tableView.isHidden = true

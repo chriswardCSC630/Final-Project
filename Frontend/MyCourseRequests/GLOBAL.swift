@@ -12,4 +12,5 @@ class GLOBAL {
     // from https://stackoverflow.com/questions/26804066/does-swift-have-class-level-static-variables
     static let BASE_API = "http://localhost:8000/"
     static var HAS_LOADED = true // change this flag if you want to wipe the database and reset it
+    static let DEFAULT_COURSE = CourseSearchItem(id: -1, title: " ", period: " ", teacher: " ", section: " ", room: " ", days: " ")!
 }
