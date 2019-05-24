@@ -8,6 +8,7 @@
 
 import Foundation
 import os.log
+import UIKit
 
 
 class CourseSearchItem: NSObject {
@@ -15,6 +16,7 @@ class CourseSearchItem: NSObject {
     //MARK: Properties
     
     var attributedTitle: NSMutableAttributedString?
+    var attributedTeacher: NSMutableAttributedString?
     var allAttributedName : NSMutableAttributedString?
     
     var id: Int
@@ -62,6 +64,16 @@ class CourseSearchItem: NSObject {
         allAttributedName = NSMutableAttributedString()
         allAttributedName!.append(attributedTitle!)
         
+        let newString = NSMutableAttributedString()
+        
+        newString.append(NSMutableAttributedString(string: " ("))
+        newString.append(attributedTeacher!)
+        newString.append(NSMutableAttributedString(string: ")"))
+        
+        newString.setAttributes([.font: UIFont.italicSystemFont(ofSize: 10), .strokeColor: UIColor.darkGray], range: NSMakeRange(0, newString.length))
+//        // alignment 2 is right
+//        newString.setAlignment(2, NSMakeRange(0, newString.length))
+        allAttributedName!.append(newString)
         return allAttributedName!
     }
     

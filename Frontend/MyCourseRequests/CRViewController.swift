@@ -8,9 +8,9 @@
 
 import UIKit
 import CoreData
-
-//class CRViewController: UIViewController, UITableViewDataSource {
 /*
+class CRViewController: UIViewController, UITableViewDataSource {
+
     // Labels
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var term: UILabel!
