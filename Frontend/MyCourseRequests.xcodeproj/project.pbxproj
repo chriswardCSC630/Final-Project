@@ -80,13 +80,13 @@
 		07FA9D1C228B90B70052084D /* MyCourseRequests */ = {
 			isa = PBXGroup;
 			children = (
+				073967222296FFAB00EDD2C1 /* NewCourseViewController.swift */,
 				07FA9D1D228B90B70052084D /* AppDelegate.swift */,
 				0739674C2297133700EDD2C1 /* Populate_Local_Data.swift */,
 				07396747229704A000EDD2C1 /* MyData.xcdatamodeld */,
 				07FA9D2F228B92330052084D /* CourseSearchItem.swift */,
 				073967202296E65400EDD2C1 /* Sport.swift */,
 				07FA9D21228B90B70052084D /* Main.storyboard */,
-				073967222296FFAB00EDD2C1 /* NewCourseViewController.swift */,
 				07396724229700B800EDD2C1 /* CustomSearchTextField.swift */,
 				0739671C2296D27800EDD2C1 /* CRViewController.swift */,
 				0739671A2296075200EDD2C1 /* GLOBAL.swift */,
