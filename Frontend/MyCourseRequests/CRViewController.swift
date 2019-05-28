@@ -23,8 +23,9 @@ class CRViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var plusNewCourseButton: UIButton!
     
     
-    
-    
+    @IBOutlet weak var musicLessonLength: DropDown!
+    @IBOutlet weak var musicLengthLabel: UILabel!
+    // The list of array to display. Can be changed dynamically
     
     
 //    var allCourses:[Course] = []
@@ -34,10 +35,10 @@ class CRViewController: UIViewController, UITableViewDataSource {
     var hasLoaded = false
     
     var hash_id = ""
-    
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
 
         hash_id = UserDefaults.standard.string(forKey: "hash_id") ?? ""
@@ -45,7 +46,20 @@ class CRViewController: UIViewController, UITableViewDataSource {
         term.text = UserDefaults.standard.string(forKey: "term") ?? "Unknown"
         
         courseTableView.dataSource = self
+        
+        // Setup music lesson length dropdown
+        musicLessonLength.optionArray = ["30 minutes", "45 minutes", "60 minutes"]
+        musicLessonLength.didSelect{( selectedText, index, id) in
+            self.musicLengthLabel.text = selectedText
+        }
+        musicLessonLength.listDidDisappear {
+            self.musicLessonLength.hideList()
+        }
+        
+        
         // Do any additional setup after loading the view.
+        
+        
         
 //        if courseGroups.count >= 5 {
 //            addNewCourseButton.isEnabled = false

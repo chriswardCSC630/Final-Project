@@ -25,6 +25,7 @@
 		07FA9D30228B92330052084D /* CourseSearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FA9D2F228B92330052084D /* CourseSearchItem.swift */; };
 		2413C076229CD9AE00214BD1 /* CourseGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413C075229CD9AE00214BD1 /* CourseGroup.swift */; };
 		2413C078229CDDFA00214BD1 /* NewCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739675022983D0300EDD2C1 /* NewCourseViewController.swift */; };
+		2494AA55229D8406007FFB6A /* iOSDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2494AA54229D8406007FFB6A /* iOSDropDown.swift */; };
 		24F45629229771DA006A6ED5 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F45628229771DA006A6ED5 /* LaunchScreenViewController.swift */; };
 		24F4562B229771E6006A6ED5 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4562A229771E6006A6ED5 /* ProgressBarView.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		07FA9D29228B90BA0052084D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07FA9D2F228B92330052084D /* CourseSearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSearchItem.swift; sourceTree = "<group>"; };
 		2413C075229CD9AE00214BD1 /* CourseGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseGroup.swift; sourceTree = "<group>"; };
+		2494AA54229D8406007FFB6A /* iOSDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSDropDown.swift; sourceTree = "<group>"; };
 		24F45628229771DA006A6ED5 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		24F4562A229771E6006A6ED5 /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				07FA9D24228B90BA0052084D /* Assets.xcassets */,
 				07FA9D26228B90BA0052084D /* LaunchScreen.storyboard */,
 				07FA9D29228B90BA0052084D /* Info.plist */,
+				2494AA54229D8406007FFB6A /* iOSDropDown.swift */,
 			);
 			path = MyCourseRequests;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2494AA55229D8406007FFB6A /* iOSDropDown.swift in Sources */,
 				0739671B2296075200EDD2C1 /* GLOBAL.swift in Sources */,
 				073967212296E65400EDD2C1 /* Sport.swift in Sources */,
 				0739671D2296D27800EDD2C1 /* CRViewController.swift in Sources */,
