@@ -182,7 +182,7 @@ class CustomSearchTextField: UITextField, UITableViewDelegate, UITableViewDataSo
             tableView.separatorInset = UIEdgeInsets.zero
             tableView.layer.cornerRadius = 5.0
             tableView.separatorColor = UIColor.white
-            tableView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.4)
+            tableView.backgroundColor = UIColor.lightGray.withAlphaComponent(1)
             
             if self.isFirstResponder {
                 superview?.bringSubviewToFront(self)

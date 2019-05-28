@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-/*
+
 class CRViewController: UIViewController, UITableViewDataSource {
 
     // Labels
@@ -22,8 +22,10 @@ class CRViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var addNewCourseButton: UIButton!
     @IBOutlet weak var plusNewCourseButton: UIButton!
     
-    // Segmented Control
-    @IBOutlet weak var saveSubmitControl: UISegmentedControl!
+    
+    
+    
+    
     
 //    var allCourses:[Course] = []
     var allSports:[Sport] = []
@@ -227,4 +229,3 @@ class CRViewController: UIViewController, UITableViewDataSource {
     */
 
 }
-*/
