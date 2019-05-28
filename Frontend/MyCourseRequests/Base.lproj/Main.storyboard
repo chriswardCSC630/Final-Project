@@ -54,10 +54,14 @@
                                     <constraint firstItem="Z6X-8J-pGD" firstAttribute="leading" secondItem="BNt-pS-gbt" secondAttribute="leading" id="nbn-aD-obR"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Your Course Requests!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4j-iT-CnY">
-                                <rect key="frame" x="0.0" y="64" width="414" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Your Course Requests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4j-iT-CnY">
+                                <rect key="frame" x="0.0" y="64" width="414" height="40"/>
+                                <color key="backgroundColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="y1k-Ks-YdI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="24"/>
-                                <color key="textColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already a user?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34Y-Kv-P23">
@@ -96,17 +100,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BNt-pS-gbt" firstAttribute="centerX" secondItem="34Y-Kv-P23" secondAttribute="centerX" id="2Gx-vn-Eqj"/>
-                            <constraint firstItem="BNt-pS-gbt" firstAttribute="centerX" secondItem="D4j-iT-CnY" secondAttribute="centerX" id="309-TS-Smc"/>
-                            <constraint firstItem="EYS-zD-9a3" firstAttribute="trailing" secondItem="D4j-iT-CnY" secondAttribute="trailing" id="4E4-A2-RRu"/>
                             <constraint firstItem="BNt-pS-gbt" firstAttribute="top" secondItem="34Y-Kv-P23" secondAttribute="bottom" constant="18" id="4zE-HV-qWO"/>
                             <constraint firstItem="Ud3-Kr-B8e" firstAttribute="leading" secondItem="EYS-zD-9a3" secondAttribute="leading" constant="165" id="JRP-12-Ntt"/>
-                            <constraint firstItem="D4j-iT-CnY" firstAttribute="top" secondItem="EYS-zD-9a3" secondAttribute="top" constant="20" id="SZk-xV-9a7"/>
-                            <constraint firstItem="D4j-iT-CnY" firstAttribute="leading" secondItem="EYS-zD-9a3" secondAttribute="leading" id="T2I-Tw-JKD"/>
+                            <constraint firstItem="D4j-iT-CnY" firstAttribute="leading" secondItem="kxk-cQ-n7C" secondAttribute="leading" id="NdX-oQ-L63"/>
                             <constraint firstItem="Ud3-Kr-B8e" firstAttribute="top" secondItem="TTd-3b-DMU" secondAttribute="bottom" constant="8" symbolic="YES" id="Xcr-mI-dsa"/>
+                            <constraint firstItem="D4j-iT-CnY" firstAttribute="top" secondItem="EYS-zD-9a3" secondAttribute="top" constant="20" id="Xr7-eU-7kw"/>
                             <constraint firstItem="BNt-pS-gbt" firstAttribute="centerX" secondItem="Ud3-Kr-B8e" secondAttribute="centerX" id="a9I-KO-hbW"/>
-                            <constraint firstItem="34Y-Kv-P23" firstAttribute="top" secondItem="D4j-iT-CnY" secondAttribute="bottom" constant="58" id="cAQ-7Y-wlR"/>
                             <constraint firstItem="jzh-jR-J6W" firstAttribute="top" secondItem="BNt-pS-gbt" secondAttribute="bottom" constant="13" id="e5B-n0-ebt"/>
                             <constraint firstItem="BNt-pS-gbt" firstAttribute="centerX" secondItem="kxk-cQ-n7C" secondAttribute="centerX" id="fKe-Da-blO"/>
+                            <constraint firstItem="D4j-iT-CnY" firstAttribute="centerX" secondItem="BNt-pS-gbt" secondAttribute="centerX" id="gWF-Kr-mla"/>
                             <constraint firstItem="34Y-Kv-P23" firstAttribute="top" secondItem="kxk-cQ-n7C" secondAttribute="top" constant="154" id="hzy-E9-HVU"/>
                             <constraint firstItem="BNt-pS-gbt" firstAttribute="centerX" secondItem="TTd-3b-DMU" secondAttribute="centerX" id="mQY-Gm-sYO"/>
                             <constraint firstItem="jzh-jR-J6W" firstAttribute="leading" secondItem="EYS-zD-9a3" secondAttribute="leading" constant="132" id="pzU-He-f6H"/>
@@ -138,16 +140,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Course Request" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1h-dk-cbn">
-                                <rect key="frame" x="0.0" y="63.5" width="414" height="29"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="40"/>
+                                <color key="backgroundColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="cVH-2F-WtJ"/>
+                                    <constraint firstAttribute="height" constant="40" id="kcN-pO-ir8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="24"/>
-                                <color key="textColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3I-kF-YrE">
-                                <rect key="frame" x="10" y="107.5" width="394" height="17"/>
+                                <rect key="frame" x="10" y="119" width="394" height="17"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ub8-Vz-fI2">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
@@ -219,6 +222,9 @@
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Period" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DH0-Wh-ssQ">
                                                                     <rect key="frame" x="0.0" y="34.5" width="25.5" height="8"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="8" id="GXS-sk-2ne"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="8"/>
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -460,16 +466,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="h1h-dk-cbn" firstAttribute="top" secondItem="WEC-Qq-rT9" secondAttribute="top" constant="19.5" id="A9L-Ig-KJs"/>
+                            <constraint firstItem="h1h-dk-cbn" firstAttribute="top" secondItem="WEC-Qq-rT9" secondAttribute="top" constant="20" id="7gf-na-zs9"/>
                             <constraint firstItem="J3I-kF-YrE" firstAttribute="leading" secondItem="WEC-Qq-rT9" secondAttribute="leading" constant="10" id="DeW-oa-KMD"/>
                             <constraint firstItem="S0Y-tF-bxK" firstAttribute="leading" secondItem="WEC-Qq-rT9" secondAttribute="leading" constant="10" id="Gl7-yd-IIo"/>
-                            <constraint firstItem="h1h-dk-cbn" firstAttribute="trailing" secondItem="WEC-Qq-rT9" secondAttribute="trailing" id="SRH-Rd-Kgm"/>
-                            <constraint firstItem="h1h-dk-cbn" firstAttribute="leading" secondItem="WEC-Qq-rT9" secondAttribute="leading" id="V8n-cF-1ij"/>
                             <constraint firstItem="WEC-Qq-rT9" firstAttribute="trailing" secondItem="S0Y-tF-bxK" secondAttribute="trailing" constant="10" id="X5T-5a-j0B"/>
+                            <constraint firstItem="h1h-dk-cbn" firstAttribute="centerX" secondItem="J3I-kF-YrE" secondAttribute="centerX" id="Zja-dX-4ux"/>
                             <constraint firstItem="WEC-Qq-rT9" firstAttribute="bottom" secondItem="qzM-Mv-qiE" secondAttribute="bottom" constant="10" id="cf1-wl-tuZ"/>
                             <constraint firstItem="qzM-Mv-qiE" firstAttribute="top" secondItem="S0Y-tF-bxK" secondAttribute="bottom" constant="8" id="h9Z-ES-HpZ"/>
-                            <constraint firstItem="J3I-kF-YrE" firstAttribute="top" secondItem="h1h-dk-cbn" secondAttribute="bottom" constant="15" id="kMc-ix-oPN"/>
+                            <constraint firstItem="h1h-dk-cbn" firstAttribute="leading" secondItem="VoX-LM-EOR" secondAttribute="leading" id="jpn-kd-Cn7"/>
                             <constraint firstItem="S0Y-tF-bxK" firstAttribute="centerX" secondItem="qzM-Mv-qiE" secondAttribute="centerX" id="mCe-fs-Fer"/>
+                            <constraint firstItem="J3I-kF-YrE" firstAttribute="top" secondItem="h1h-dk-cbn" secondAttribute="bottom" constant="15" id="r0u-Gg-Txi"/>
                             <constraint firstItem="S0Y-tF-bxK" firstAttribute="top" secondItem="J3I-kF-YrE" secondAttribute="bottom" constant="15" id="ran-H4-Tew"/>
                             <constraint firstItem="WEC-Qq-rT9" firstAttribute="trailing" secondItem="J3I-kF-YrE" secondAttribute="trailing" constant="10" id="t0v-oO-mYb"/>
                             <constraint firstItem="qzM-Mv-qiE" firstAttribute="leading" secondItem="VoX-LM-EOR" secondAttribute="leadingMargin" id="xAz-ZJ-P97"/>
@@ -507,13 +513,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Course" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eql-Xk-wFd">
-                                <rect key="frame" x="0.0" y="54" width="414" height="24"/>
+                                <rect key="frame" x="0.0" y="54" width="414" height="40"/>
+                                <color key="backgroundColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dW9-rt-4dL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="24"/>
-                                <color key="textColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" restorationIdentifier="MainSelection" translatesAutoresizingMaskIntoConstraints="NO" id="FjT-CJ-BHs" customClass="NewCourseView" customModule="MyCourseRequests" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="79" width="414" height="192"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="176"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primary selection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6u-CQ-qOP">
                                         <rect key="frame" x="20" y="26" width="126" height="17"/>
@@ -810,63 +820,63 @@
                                 <rect key="frame" x="0.0" y="458" width="414" height="187"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternate 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sR7-hs-9yH">
-                                        <rect key="frame" x="20" y="25.5" width="88.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <rect key="frame" x="20" y="26" width="80.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wdI-IF-UMZ">
-                                        <rect key="frame" x="20" y="106" width="203" height="20.5"/>
+                                        <rect key="frame" x="20" y="103" width="175.5" height="14"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sb-Hc-2lK">
-                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="57.5" id="hKh-F8-XRe"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zufelt, Nicholas A." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-nW-t0R">
-                                                <rect key="frame" x="62.5" y="0.0" width="140.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="62.5" y="0.0" width="113" height="14"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter course name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jDA-oI-mTM" customClass="CustomSearchTextField" customModule="MyCourseRequests" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="53" width="374" height="30"/>
+                                        <rect key="frame" x="20" y="50" width="374" height="30"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <action selector="updateMainLabels:" destination="4vu-ap-jOO" eventType="editingDidEnd" id="81q-GR-gip"/>
                                         </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="e3s-bx-NmT">
-                                        <rect key="frame" x="20" y="146" width="60" height="20.5"/>
+                                        <rect key="frame" x="20" y="136.5" width="59.5" height="17"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Period" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agl-yZ-f2M">
-                                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="46.5" id="Vjl-Ak-ADc"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqo-4h-0EJ">
-                                                <rect key="frame" x="51.5" y="0.0" width="8.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <rect key="frame" x="51.5" y="0.0" width="8" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mND-8y-nq5">
-                                        <rect key="frame" x="354" y="20" width="40" height="29"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <rect key="frame" x="355" y="20" width="39" height="26"/>
+                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="14"/>
                                         <state key="normal" title="Reset">
                                             <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.39145440920000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -875,40 +885,40 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JQh-cJ-W8k">
-                                        <rect key="frame" x="302" y="106" width="92" height="20.5"/>
+                                        <rect key="frame" x="305" y="103" width="89" height="14"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRQ-DE-PHZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="41" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="41" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="41" id="a4h-B7-TCv"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M308" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gO-1I-esu">
-                                                <rect key="frame" x="46" y="0.0" width="46" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="46" y="0.0" width="43" height="14"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lAQ-rV-wyt">
-                                        <rect key="frame" x="302" y="146" width="98" height="20.5"/>
+                                        <rect key="frame" x="305" y="136.5" width="95" height="14"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlO-ay-s2T">
-                                                <rect key="frame" x="0.0" y="0.0" width="35.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="35.5" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35.5" id="aXu-pz-C6h"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MTTHF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggC-xH-SZr">
-                                                <rect key="frame" x="40.5" y="0.0" width="57.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="40.5" y="0.0" width="54.5" height="14"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -964,63 +974,63 @@
                                 <rect key="frame" x="0.0" y="645" width="414" height="187"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternate 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijF-DJ-b9h">
-                                        <rect key="frame" x="20" y="25.5" width="89" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <rect key="frame" x="20" y="26" width="79.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qXZ-2J-7KA">
-                                        <rect key="frame" x="20" y="106" width="203" height="20.5"/>
+                                        <rect key="frame" x="20" y="103" width="175.5" height="14"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pA-oZ-z7Q">
-                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="57.5" id="XSS-aY-cH0"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zufelt, Nicholas A." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuu-q6-vVf">
-                                                <rect key="frame" x="62.5" y="0.0" width="140.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="62.5" y="0.0" width="113" height="14"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter course name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qis-PG-Yyv" customClass="CustomSearchTextField" customModule="MyCourseRequests" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="53" width="374" height="30"/>
+                                        <rect key="frame" x="20" y="50" width="374" height="30"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <action selector="updateMainLabels:" destination="L7z-zI-Oqc" eventType="editingDidEnd" id="Jwx-wX-AWt"/>
                                         </connections>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vw2-Tn-wWA">
-                                        <rect key="frame" x="20" y="146" width="60" height="20.5"/>
+                                        <rect key="frame" x="20" y="136.5" width="59.5" height="17"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Period" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EX-TK-Ber">
-                                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="46.5" id="OBN-fG-0w8"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXT-sF-4JA">
-                                                <rect key="frame" x="51.5" y="0.0" width="8.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <rect key="frame" x="51.5" y="0.0" width="8" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSr-dB-uqu">
-                                        <rect key="frame" x="354" y="20" width="40" height="29"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <rect key="frame" x="355" y="20" width="39" height="26"/>
+                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="14"/>
                                         <state key="normal" title="Reset">
                                             <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.39145440920000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -1029,40 +1039,40 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="H6j-7d-Fa8">
-                                        <rect key="frame" x="302" y="106" width="92" height="20.5"/>
+                                        <rect key="frame" x="305" y="103" width="89" height="14"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDd-F7-QDx">
-                                                <rect key="frame" x="0.0" y="0.0" width="41" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="41" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="41" id="yKf-YS-8Bi"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M308" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctS-UG-iBP">
-                                                <rect key="frame" x="46" y="0.0" width="46" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="46" y="0.0" width="43" height="14"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Zaf-GY-qzD">
-                                        <rect key="frame" x="302" y="146" width="98" height="20.5"/>
+                                        <rect key="frame" x="305" y="136.5" width="95" height="14"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0W0-p2-XAV">
-                                                <rect key="frame" x="0.0" y="0.0" width="35.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="35.5" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35.5" id="Iwy-LC-sp1"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MTTHF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xz-J4-Rnm">
-                                                <rect key="frame" x="40.5" y="0.0" width="57.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="40.5" y="0.0" width="54.5" height="14"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1114,18 +1124,17 @@
                                     <outlet property="teacher" destination="wuu-q6-vVf" id="CpH-5z-rfv"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YM3-4f-0pf">
-                                <rect key="frame" x="187" y="840" width="40" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YM3-4f-0pf">
+                                <rect key="frame" x="187" y="833" width="40" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Iur-Yg-0bj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
                                 <state key="normal" title="Save"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YM3-4f-0pf" firstAttribute="top" secondItem="L7z-zI-Oqc" secondAttribute="bottom" constant="8" id="7MO-Kn-JGf"/>
                             <constraint firstItem="Y0I-lX-kbw" firstAttribute="trailing" secondItem="FjT-CJ-BHs" secondAttribute="trailing" id="8oj-Kg-huR"/>
                             <constraint firstItem="Y0I-lX-kbw" firstAttribute="bottom" secondItem="FjT-CJ-BHs" secondAttribute="bottom" constant="591" id="AS1-Hi-FPj"/>
                             <constraint firstItem="Y0I-lX-kbw" firstAttribute="bottom" secondItem="Moe-qx-RhP" secondAttribute="bottom" constant="404" id="CFb-dh-0Z7"/>
@@ -1170,7 +1179,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="RF2-Ef-DMh">
-                                <rect key="frame" x="35" y="131" width="200" height="488"/>
+                                <rect key="frame" x="35" y="137" width="200" height="488"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xBA-fR-JP3">
                                         <rect key="frame" x="0.0" y="0.0" width="138.5" height="58"/>
@@ -1294,17 +1303,20 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error field" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3X-aa-mP8">
-                                <rect key="frame" x="35" y="656" width="359" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgJ-67-NMC">
+                                <rect key="frame" x="0.0" y="57" width="414" height="40"/>
+                                <color key="backgroundColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="Xdb-KZ-dFy"/>
+                                    <constraint firstAttribute="height" constant="40" id="f2F-P6-Hej"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="24"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="pwF-BI-Ktg">
-                                <rect key="frame" x="30" y="57" width="355.5" height="29"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="270" translatesAutoresizingMaskIntoConstraints="NO" id="pwF-BI-Ktg">
+                                <rect key="frame" x="35" y="833" width="359" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWI-B9-oIR">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="29"/>
@@ -1314,15 +1326,8 @@
                                             <action selector="onCancelButton:" destination="jTf-r8-3aE" eventType="touchUpInside" id="5Dv-i3-z7B"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgJ-67-NMC">
-                                        <rect key="frame" x="85" y="0.0" width="196.5" height="29"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="24"/>
-                                        <color key="textColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTq-lM-mPQ">
-                                        <rect key="frame" x="316.5" y="0.0" width="39" height="29"/>
+                                        <rect key="frame" x="320" y="0.0" width="39" height="29"/>
                                         <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
@@ -1332,14 +1337,24 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error field" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3X-aa-mP8">
+                                <rect key="frame" x="35" y="662" width="359" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Xdb-KZ-dFy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="NgJ-67-NMC" firstAttribute="top" secondItem="P7A-Ap-AQJ" secondAttribute="top" constant="13" id="5zc-X7-mEx"/>
+                            <constraint firstItem="RF2-Ef-DMh" firstAttribute="top" secondItem="NgJ-67-NMC" secondAttribute="bottom" constant="40" id="B1G-gv-Lhd"/>
                             <constraint firstItem="r3X-aa-mP8" firstAttribute="top" secondItem="RF2-Ef-DMh" secondAttribute="bottom" constant="37" id="CE4-c3-iQ3"/>
-                            <constraint firstItem="RF2-Ef-DMh" firstAttribute="top" secondItem="pwF-BI-Ktg" secondAttribute="bottom" constant="45" id="Ys3-nx-kBx"/>
-                            <constraint firstItem="pwF-BI-Ktg" firstAttribute="leading" secondItem="P7A-Ap-AQJ" secondAttribute="leading" constant="30" id="cTQ-jU-e6E"/>
+                            <constraint firstItem="P7A-Ap-AQJ" firstAttribute="trailing" secondItem="NgJ-67-NMC" secondAttribute="trailing" id="Nch-e3-r4l"/>
                             <constraint firstItem="r3X-aa-mP8" firstAttribute="leading" secondItem="P7A-Ap-AQJ" secondAttribute="leading" constant="35" id="f8R-se-lhA"/>
-                            <constraint firstItem="pwF-BI-Ktg" firstAttribute="top" secondItem="P7A-Ap-AQJ" secondAttribute="top" constant="13" id="i8p-8t-wad"/>
+                            <constraint firstItem="NgJ-67-NMC" firstAttribute="leading" secondItem="P7A-Ap-AQJ" secondAttribute="leading" id="oa0-dX-bpx"/>
                             <constraint firstItem="r3X-aa-mP8" firstAttribute="trailing" secondItem="2sI-jY-ZZc" secondAttribute="trailingMargin" id="tPw-IV-6qo"/>
                             <constraint firstItem="r3X-aa-mP8" firstAttribute="leading" secondItem="RF2-Ef-DMh" secondAttribute="leading" id="zl0-xg-K1z"/>
                         </constraints>
@@ -1359,7 +1374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vq8-EC-zZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1630" y="816"/>
+            <point key="canvasLocation" x="-1630.4347826086957" y="815.625"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
