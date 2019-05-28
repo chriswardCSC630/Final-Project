@@ -12,24 +12,24 @@ import UIKit
 class LaunchScreenViewController: UIViewController, UITextFieldDelegate {
     // Modified progress bar code (from circlular example to a line) from https://medium.com/@ashikabala01/creating-custom-progress-bar-in-ios-using-swift-c662525b6ed
     
-    @IBOutlet weak var progressBar: ProgressBarView!
-    var timer: Timer!
-    var progressCounter:Float = 0
-    let duration:Float = 5
-    var progressIncrement:Float = 0
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        progressBar.layerSetup()
-        progressIncrement = 1.0/duration
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.showProgress), userInfo: nil, repeats: true)
-    }
-    
-    @objc func showProgress() {
-        if(progressCounter > 1.0){timer.invalidate()}
-        progressBar.progress = progressCounter
-        progressCounter = progressCounter + progressIncrement
-    }
+//    @IBOutlet weak var progressBar: ProgressBarView!
+//    var timer: Timer!
+//    var progressCounter:Float = 0
+//    let duration:Float = 5
+//    var progressIncrement:Float = 0
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        progressBar.layerSetup()
+//        progressIncrement = 1.0/duration
+//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.showProgress), userInfo: nil, repeats: true)
+//    }
+//
+//    @objc func showProgress() {
+//        if(progressCounter > 1.0){timer.invalidate()}
+//        progressBar.progress = progressCounter
+//        progressCounter = progressCounter + progressIncrement
+//    }
     
     /*
      // MARK: - Navigation
