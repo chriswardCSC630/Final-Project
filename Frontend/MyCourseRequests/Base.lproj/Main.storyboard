@@ -623,21 +623,11 @@
                                     <constraint firstItem="fXN-s1-Xzb" firstAttribute="trailing" secondItem="IF7-6v-Lbs" secondAttribute="trailing" id="jk0-40-lTa"/>
                                 </constraints>
                             </scrollView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="270" translatesAutoresizingMaskIntoConstraints="NO" id="Lj5-PU-edW">
-                                <rect key="frame" x="27.5" y="833" width="359" height="29"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdq-xo-v78">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="29"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
-                                        <state key="normal" title="Cancel"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yx9-1P-Eg1">
-                                        <rect key="frame" x="320" y="0.0" width="39" height="29"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
-                                        <state key="normal" title="Save"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yx9-1P-Eg1">
+                                <rect key="frame" x="355" y="833" width="39" height="29"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
+                                <state key="normal" title="Save"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -646,13 +636,13 @@
                             <constraint firstItem="S0Y-tF-bxK" firstAttribute="trailing" secondItem="J3I-kF-YrE" secondAttribute="trailing" id="JC8-3J-HVU"/>
                             <constraint firstItem="S0Y-tF-bxK" firstAttribute="top" secondItem="J3I-kF-YrE" secondAttribute="bottom" constant="7" id="JRm-04-ECV"/>
                             <constraint firstItem="S0Y-tF-bxK" firstAttribute="leading" secondItem="J3I-kF-YrE" secondAttribute="leading" id="PZY-B0-v65"/>
-                            <constraint firstItem="Lj5-PU-edW" firstAttribute="top" secondItem="S0Y-tF-bxK" secondAttribute="bottom" constant="8" symbolic="YES" id="SRN-HV-inR"/>
                             <constraint firstItem="h1h-dk-cbn" firstAttribute="centerX" secondItem="J3I-kF-YrE" secondAttribute="centerX" id="Zja-dX-4ux"/>
-                            <constraint firstItem="S0Y-tF-bxK" firstAttribute="centerX" secondItem="Lj5-PU-edW" secondAttribute="centerX" id="aeQ-6A-VtY"/>
                             <constraint firstItem="h1h-dk-cbn" firstAttribute="leading" secondItem="VoX-LM-EOR" secondAttribute="leading" id="jpn-kd-Cn7"/>
+                            <constraint firstItem="yx9-1P-Eg1" firstAttribute="top" secondItem="S0Y-tF-bxK" secondAttribute="bottom" constant="8" symbolic="YES" id="mLt-Cn-XJi"/>
                             <constraint firstItem="J3I-kF-YrE" firstAttribute="top" secondItem="h1h-dk-cbn" secondAttribute="bottom" constant="15" id="r0u-Gg-Txi"/>
                             <constraint firstItem="WEC-Qq-rT9" firstAttribute="trailing" secondItem="J3I-kF-YrE" secondAttribute="trailing" constant="10" id="t0v-oO-mYb"/>
                             <constraint firstAttribute="bottom" secondItem="S0Y-tF-bxK" secondAttribute="bottom" constant="71" id="t10-Jp-TV2"/>
+                            <constraint firstItem="yx9-1P-Eg1" firstAttribute="trailing" secondItem="VoX-LM-EOR" secondAttribute="trailingMargin" id="xf4-Aq-chm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WEC-Qq-rT9"/>
                     </view>
