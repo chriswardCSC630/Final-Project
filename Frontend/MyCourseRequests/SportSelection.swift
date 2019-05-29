@@ -11,7 +11,7 @@ import Foundation
 import os.log
 
 
-class Sport: NSObject, NSCoding {
+class SportSelection: NSObject, NSCoding {
     
     //MARK: Properties
     

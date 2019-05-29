@@ -22,16 +22,34 @@ class CRViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var addNewCourseButton: UIButton!
     @IBOutlet weak var plusNewCourseButton: UIButton!
     
+    @IBOutlet weak var saveButton: UIButton!
+    
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    @IBOutlet weak var sport: DropDown!
+    @IBOutlet weak var sportTeacher: UILabel!
+    @IBOutlet weak var sportDays: UILabel!
+    var sportID: Int = -1
     
     @IBOutlet weak var musicLessonLength: DropDown!
     @IBOutlet weak var musicLengthLabel: UILabel!
-    // The list of array to display. Can be changed dynamically
+    
+    @IBOutlet weak var musicLessonInstrument: UITextField!
+    
+    @IBOutlet weak var musicLessonTeacher: UITextField!
     
     
-//    var allCourses:[Course] = []
-    var allSports:[Sport] = []
+    @IBOutlet weak var additionalComments: UITextField!
     
-//    var courseGroups:[[Course]] = []
+    
+    @IBOutlet weak var resetSportButton: UIButton!
+    
+    
+    var allSports:[Sports] = [Sports]()
+    
+    var courseGroups:[CourseGroup] = []
     var hasLoaded = false
     
     var hash_id = ""
@@ -46,6 +64,26 @@ class CRViewController: UIViewController, UITableViewDataSource {
         term.text = UserDefaults.standard.string(forKey: "term") ?? "Unknown"
         
         courseTableView.dataSource = self
+    
+        populateSports()
+        // Setup sport dropdown
+        var arr:[String] = []
+        for elem:Sports in allSports {
+            arr.append(elem.title!) // add all sports to allSports
+        }
+        self.resetSport("")
+        sport.optionArray = arr
+        sport.didSelect{( selectedText, index, id) in
+            self.sportTeacher.text = self.allSports[index].teacher
+            self.sportDays.text = self.allSports[index].days
+            self.sportID = Int(self.allSports[index].id)
+            self.updateSaveButtonState()
+            self.sport.isEnabled = false
+            self.resetSportButton.isEnabled = true
+        }
+        sport.listDidDisappear {
+            self.sport.hideList()
+        }
         
         // Setup music lesson length dropdown
         musicLessonLength.optionArray = ["30 minutes", "45 minutes", "60 minutes"]
@@ -61,16 +99,88 @@ class CRViewController: UIViewController, UITableViewDataSource {
         
         
         
-//        if courseGroups.count >= 5 {
-//            addNewCourseButton.isEnabled = false
-//            plusNewCourseButton.isEnabled = false
-//        }
-//        else {
-//            addNewCourseButton.isEnabled = true
-//            plusNewCourseButton.isEnabled = true
-//        }
+        if courseGroups.count >= 5 {
+            addNewCourseButton.isEnabled = false
+            plusNewCourseButton.isEnabled = false
+        }
+        else {
+            addNewCourseButton.isEnabled = true
+            plusNewCourseButton.isEnabled = true
+        }
+        
+        updateSaveButtonState()
+    }
+    
+    @IBAction func resetSport(_ sender: Any) {
+        self.sport.text = ""
+        self.sportTeacher.text = ""
+        self.sportDays.text = ""
+        self.sport.isEnabled = true
+        self.resetSportButton.isEnabled = false
+    }
+    
+    func populateSports() {
+        let request : NSFetchRequest<Sports> = Sports.fetchRequest()
+        do {
+            allSports = try context.fetch(request)
+        } catch {
+            print("Error while fetching data: \(error)")
+        }
+    }
+    
+    func updateSaveButtonState() {
+        if courseGroups.count > 0 && sportID != -1 {
+            saveButton.isEnabled = true
+        }
+        else {
+            saveButton.isEnabled = false
+        }
+    }
+    
+    @IBAction func unwindToCourseSelection(segue: UIStoryboardSegue) {
+        if let sourceViewController = segue.source as? NewCourseViewController, let courseGroup = sourceViewController.courseGroup {
+            let newIndexPath = IndexPath(row: courseGroups.count, section: 0)
+            courseGroups.append(courseGroup)
+            courseTableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+
     }
   
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Save", message: "Are you sure to save?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel Logout"), style: .cancel, handler: { _ in
+            NSLog("The \"Cancel\" alert occured.")
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Save", comment: "Confirm Save"), style: .default, handler: { _ in
+            NSLog("The \"Save\" alert occured.")
+            self.handleSave()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func handleSave() {
+        /*
+        courses = content["courses"] # should be an array of the courses' IDs
+        sixthCourse = content["sixthCourse"]
+        topPriority = content["topPriority"]
+        sport = content["sport"] # should be the sport's ID
+        mL = content["musicLesson"] # should be a dict in the proper musiclesson format
+        comments = content["comments"]
+ */
+        var courses:[[Int]] = []
+        for courseGroup: CourseGroup in courseGroups {
+            courses.append([courseGroup.mainCourse.id, courseGroup.alt1.id, courseGroup.alt2.id, courseGroup.alt3.id])
+        }
+        var paramToSend = "courses=" + courses.description
+        paramToSend += "&sixthCourse=-1" // we are not using sixthCourse in this version
+        paramToSend += "&topPriority=-1" // same as above
+        paramToSend += "&sport=" + String(sportID)
+        let mL:[String:String] = ["instrument" : musicLessonInstrument.text ?? "", "teacher": musicLessonTeacher.text ?? "", "length" : musicLengthLabel.text ?? ""]
+        paramToSend += "&musicLesson=" + mL.description
+        paramToSend += "&comments=" + (additionalComments.text ?? "none")
+        print(mL)
+//        makeURLRequest(urlString: GLOBAL.BASE_API, method: "POST", paramToSend: paramToSend)
+    }
     
     func makeURLRequest(urlString: String, method: String, paramToSend: String? = "") {
         
@@ -131,16 +241,27 @@ class CRViewController: UIViewController, UITableViewDataSource {
                 return
             }
             
-//            else if (method == "POST") {
-//                if memory == nil {
-//                    print("Memory passed in incompatible format -- POST")
-//                    DispatchQueue.main.async {
-//                        MyActivityIndicator.removeAll()
-//                    }
-//                    return
-//                }
-//                self.updateMemoryID(serverResponse: serverResponse, memory: memory!)
-//            }
+            guard let status = serverResponse["status"] as? String else {
+                print("incorrect server_response format: no status field")
+                return
+            }
+            guard let message = serverResponse["message"] as? String else {
+                print("incorrect server_response format: no message field")
+                return
+            }
+            
+            
+            if (method == "POST") {
+                if status == "false" { // then there was an error: code 406
+                    DispatchQueue.main.async {
+                        self.errorLabel.text = message
+                        self.errorLabel.textColor = UIColor.red
+                    }
+                } else {
+                    self.makeURLRequest(urlString: GLOBAL.BASE_API + "logout/", method: "GET")
+                    self.performSegue(withIdentifier: "logoutStudent", sender: "")
+                }
+            }
 //            else if (method == "PATCH") {
 //                MyActivityIndicator.removeAll()
 //                return
@@ -167,9 +288,9 @@ class CRViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-//        return allCourses.count
-        return 0
+        return courseGroups.count
     }
+        
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -179,18 +300,40 @@ class CRViewController: UIViewController, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CourseTableViewCell else {
             fatalError("The dequeued cell is not an instance of CourseTableViewCell.")
         }
-        /*
+        
         // Fetches the appropriate course for the data source layout
         let courseGroup = courseGroups[indexPath.row]
-        cell.mainCourse.text = courseGroup[0].title
-        cell.period.text = String(courseGroup[0].period)
-        cell.alt1.text = courseGroup[1].title
-        cell.alt1Period.text = String(courseGroup[1].period)
-        cell.alt2.text = courseGroup[2].title
-        cell.alt2Period.text = String(courseGroup[2].period)
-        cell.alt3.text = courseGroup[3].title
-        cell.alt3Period.text = String(courseGroup[3].period)
-        */
+        cell.mainCourse.text = courseGroup.mainCourse.title
+        cell.period.text = courseGroup.mainCourse.period
+        
+        
+        if (courseGroup.alt1.title == " ") {
+            cell.alt1.text = "None"
+        }
+        else {
+            cell.alt1.text = courseGroup.alt1.title
+        }
+        cell.alt1Period.text = courseGroup.alt1.period
+
+        if (courseGroup.alt2.title == " ") {
+            cell.alt2.text = "None"
+        }
+        else {
+            cell.alt2.text = courseGroup.alt2.title
+        }
+        
+        
+        cell.alt2Period.text = courseGroup.alt2.period
+    
+        if (courseGroup.alt3.title == " ") {
+            cell.alt3.text = "None"
+        }
+        else {
+            cell.alt3.text = courseGroup.alt3.title
+        }
+        
+        cell.alt3Period.text = courseGroup.alt3.period
+        
         // Configure the cell...
         
         return cell

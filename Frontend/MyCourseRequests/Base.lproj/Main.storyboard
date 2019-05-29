@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dMt-h0-sTx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dMt-h0-sTx">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -197,7 +197,7 @@
                                             <constraint firstAttribute="height" constant="350" id="x3r-yh-GfO"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lAV-kI-iQk" customClass="CourseTableViewCell" customModule="MyCourseRequests" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseTableViewCell" id="lAV-kI-iQk" customClass="CourseTableViewCell" customModule="MyCourseRequests" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="354" height="82"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lAV-kI-iQk" id="o1a-cQ-Z4M">
@@ -421,9 +421,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="22" height="30"/>
                                                 <color key="tintColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <segue destination="22C-4H-fzY" kind="popoverPresentation" popoverAnchorView="mkg-2m-geK" id="bjS-MT-8b9">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
+                                                    <segue destination="WMz-LW-chB" kind="show" id="cN0-Yq-45q"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W17-XU-VO7">
@@ -433,9 +431,7 @@
                                                     <color key="titleColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="22C-4H-fzY" kind="popoverPresentation" popoverAnchorView="W17-XU-VO7" id="rbR-tF-Qf6">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
+                                                    <segue destination="WMz-LW-chB" kind="show" id="MvI-wu-sbf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -453,11 +449,11 @@
                                         <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGr-iv-M6e" customClass="NewCourseView" customModule="MyCourseRequests" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGr-iv-M6e">
                                         <rect key="frame" x="8" y="426" width="378" height="93"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter sport name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LJD-kL-gBf" customClass="CustomSearchTextField" customModule="MyCourseRequests" customModuleProvider="target">
-                                                <rect key="frame" x="12" y="34" width="147" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select sport" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LJD-kL-gBf" customClass="DropDown" customModule="MyCourseRequests" customModuleProvider="target">
+                                                <rect key="frame" x="12" y="34" width="307" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -478,6 +474,9 @@
                                                 <state key="normal" title="Reset">
                                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.39145440920000002" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="resetSport:" destination="dMt-h0-sTx" eventType="touchUpInside" id="wPb-nT-cBf"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rcd-bd-PEo">
                                                 <rect key="frame" x="271" y="71" width="95" height="14"/>
@@ -531,6 +530,7 @@
                                             <constraint firstItem="zIq-gn-Ku1" firstAttribute="centerY" secondItem="dGr-iv-M6e" secondAttribute="centerY" id="Ocx-qD-F8X"/>
                                             <constraint firstItem="diW-WB-x2l" firstAttribute="leading" secondItem="LJD-kL-gBf" secondAttribute="leading" id="PPa-BM-Be9"/>
                                             <constraint firstItem="WMY-Hj-Fao" firstAttribute="top" secondItem="rcd-bd-PEo" secondAttribute="top" id="QDZ-3w-D3s"/>
+                                            <constraint firstItem="zIq-gn-Ku1" firstAttribute="leading" secondItem="LJD-kL-gBf" secondAttribute="trailing" constant="8" id="WpD-s4-A20"/>
                                             <constraint firstAttribute="trailing" secondItem="WMY-Hj-Fao" secondAttribute="trailing" constant="190" id="af2-hR-HAf"/>
                                             <constraint firstItem="rcd-bd-PEo" firstAttribute="top" secondItem="zIq-gn-Ku1" secondAttribute="bottom" constant="12" id="jbA-KQ-3fU"/>
                                             <constraint firstItem="WMY-Hj-Fao" firstAttribute="leading" secondItem="LJD-kL-gBf" secondAttribute="leading" id="kOw-hv-C1H"/>
@@ -539,7 +539,7 @@
                                             <constraint firstAttribute="height" constant="93" id="v47-rz-9oa"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" restorationIdentifier="MainSelection" translatesAutoresizingMaskIntoConstraints="NO" id="IF7-6v-Lbs" customClass="NewCourseView" customModule="MyCourseRequests" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" restorationIdentifier="MainSelection" translatesAutoresizingMaskIntoConstraints="NO" id="IF7-6v-Lbs">
                                         <rect key="frame" x="8" y="527" width="378" height="107"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name of instrument" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vjj-2z-oIf">
@@ -599,9 +599,9 @@
                                             <constraint firstItem="jVV-n5-PBR" firstAttribute="leading" secondItem="Vjj-2z-oIf" secondAttribute="leading" id="r3b-VB-e9S"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter additional comments" borderStyle="roundedRect" placeholder="Enter name of teacher" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fXN-s1-Xzb">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter additional comments" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fXN-s1-Xzb">
                                         <rect key="frame" x="8" y="644" width="378" height="30"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -632,6 +632,26 @@
                                 <rect key="frame" x="355" y="833" width="39" height="29"/>
                                 <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="dMt-h0-sTx" eventType="touchUpInside" id="VqK-md-aCA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error field" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNG-Aw-a4o">
+                                <rect key="frame" x="20" y="826" width="325" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="325" id="Ztb-xQ-8SV"/>
+                                    <constraint firstAttribute="height" constant="22" id="n7k-0g-xuI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="10"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m3-1h-jrv">
+                                <rect key="frame" x="39" y="856" width="30" height="30"/>
+                                <state key="normal" title=" "/>
+                                <connections>
+                                    <segue destination="i1o-8N-odz" kind="presentation" identifier="logoutStudent" id="B76-MQ-WIi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -640,10 +660,14 @@
                             <constraint firstItem="yx9-1P-Eg1" firstAttribute="trailing" secondItem="VoX-LM-EOR" secondAttribute="trailingMargin" id="AVJ-ij-iBq"/>
                             <constraint firstItem="J3I-kF-YrE" firstAttribute="leading" secondItem="WEC-Qq-rT9" secondAttribute="leading" constant="10" id="DeW-oa-KMD"/>
                             <constraint firstItem="yx9-1P-Eg1" firstAttribute="top" secondItem="S0Y-tF-bxK" secondAttribute="bottom" constant="8" symbolic="YES" id="G0J-Jh-JpW"/>
+                            <constraint firstItem="WEC-Qq-rT9" firstAttribute="bottom" secondItem="NNG-Aw-a4o" secondAttribute="bottom" constant="14" id="IhU-6G-0Mf"/>
                             <constraint firstItem="S0Y-tF-bxK" firstAttribute="trailing" secondItem="J3I-kF-YrE" secondAttribute="trailing" id="JC8-3J-HVU"/>
                             <constraint firstItem="S0Y-tF-bxK" firstAttribute="top" secondItem="J3I-kF-YrE" secondAttribute="bottom" constant="7" id="JRm-04-ECV"/>
+                            <constraint firstItem="NNG-Aw-a4o" firstAttribute="leading" secondItem="WEC-Qq-rT9" secondAttribute="leading" constant="20" id="LI0-ko-jQv"/>
                             <constraint firstItem="S0Y-tF-bxK" firstAttribute="leading" secondItem="J3I-kF-YrE" secondAttribute="leading" id="PZY-B0-v65"/>
+                            <constraint firstItem="8m3-1h-jrv" firstAttribute="leading" secondItem="WEC-Qq-rT9" secondAttribute="leading" constant="39" id="Q6g-b0-rDY"/>
                             <constraint firstItem="h1h-dk-cbn" firstAttribute="centerX" secondItem="J3I-kF-YrE" secondAttribute="centerX" id="Zja-dX-4ux"/>
+                            <constraint firstAttribute="bottom" secondItem="8m3-1h-jrv" secondAttribute="bottom" constant="10" id="fxm-Lc-Nwq"/>
                             <constraint firstItem="h1h-dk-cbn" firstAttribute="leading" secondItem="VoX-LM-EOR" secondAttribute="leading" id="jpn-kd-Cn7"/>
                             <constraint firstItem="J3I-kF-YrE" firstAttribute="top" secondItem="h1h-dk-cbn" secondAttribute="bottom" constant="15" id="r0u-Gg-Txi"/>
                             <constraint firstItem="WEC-Qq-rT9" firstAttribute="trailing" secondItem="J3I-kF-YrE" secondAttribute="trailing" constant="10" id="t0v-oO-mYb"/>
@@ -653,12 +677,21 @@
                     </view>
                     <connections>
                         <outlet property="addNewCourseButton" destination="W17-XU-VO7" id="OjI-Ar-Unr"/>
+                        <outlet property="additionalComments" destination="fXN-s1-Xzb" id="4Mz-6w-3nU"/>
                         <outlet property="courseTableView" destination="C94-wi-BkW" id="oYc-TW-8iI"/>
+                        <outlet property="errorLabel" destination="NNG-Aw-a4o" id="1mQ-wh-BWp"/>
                         <outlet property="musicLengthLabel" destination="bvU-Hj-dsd" id="s2x-8K-3pk"/>
+                        <outlet property="musicLessonInstrument" destination="Vjj-2z-oIf" id="PG2-Ar-6Em"/>
                         <outlet property="musicLessonLength" destination="O0U-fW-fPZ" id="Vwu-Au-Yba"/>
+                        <outlet property="musicLessonTeacher" destination="jVV-n5-PBR" id="1wE-bn-lNc"/>
                         <outlet property="name" destination="Xbb-nN-RHr" id="Pgd-Ta-jE2"/>
                         <outlet property="plusNewCourseButton" destination="mkg-2m-geK" id="fYL-Dq-Pwv"/>
+                        <outlet property="resetSportButton" destination="zIq-gn-Ku1" id="cls-1E-Luf"/>
+                        <outlet property="saveButton" destination="yx9-1P-Eg1" id="Phu-AE-d0S"/>
                         <outlet property="searchDisplayController" destination="Z6f-Ru-6wA" id="yJF-vT-1ga"/>
+                        <outlet property="sport" destination="LJD-kL-gBf" id="Ego-M1-yTe"/>
+                        <outlet property="sportDays" destination="yYz-Zp-5QK" id="3JC-fC-TJf"/>
+                        <outlet property="sportTeacher" destination="oSU-GX-I2R" id="U6i-Lh-F0F"/>
                         <outlet property="term" destination="Awj-2Y-gPr" id="kaw-7m-GN9"/>
                     </connections>
                 </viewController>
@@ -672,7 +705,23 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-1630.4347826086957" y="85.714285714285708"/>
+            <point key="canvasLocation" x="-1457" y="56"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aGD-8k-ugx">
+            <objects>
+                <navigationController id="WMz-LW-chB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IJc-OU-7Zm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="22C-4H-fzY" kind="relationship" relationship="rootViewController" id="NDS-Y1-kob"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QzE-6g-lAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-590" y="-327"/>
         </scene>
         <!--New Course View Controller-->
         <scene sceneID="t1K-yW-fcs">
@@ -683,20 +732,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ecO-gv-XZg">
-                                <rect key="frame" x="0.0" y="271" width="414" height="374"/>
+                                <rect key="frame" x="0.0" y="305" width="414" height="374"/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Course" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eql-Xk-wFd">
-                                <rect key="frame" x="0.0" y="54" width="414" height="40"/>
-                                <color key="backgroundColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Vnu-3l-fc2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="24"/>
-                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" restorationIdentifier="MainSelection" translatesAutoresizingMaskIntoConstraints="NO" id="FjT-CJ-BHs" customClass="NewCourseView" customModule="MyCourseRequests" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="95" width="414" height="176"/>
+                                <rect key="frame" x="0.0" y="129" width="414" height="176"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primary selection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6u-CQ-qOP">
                                         <rect key="frame" x="20" y="26" width="126" height="17"/>
@@ -836,7 +875,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" restorationIdentifier="Alt1Selection" translatesAutoresizingMaskIntoConstraints="NO" id="Moe-qx-RhP" customClass="NewCourseView" customModule="MyCourseRequests" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="271" width="414" height="187"/>
+                                <rect key="frame" x="0.0" y="305" width="414" height="187"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternate 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaN-xH-z5r">
                                         <rect key="frame" x="20" y="26" width="79" height="17"/>
@@ -955,7 +994,6 @@
                                         <color key="onTintColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="altSwitchPressed:" destination="Moe-qx-RhP" eventType="valueChanged" id="dQ6-ep-lYN"/>
-                                            <action selector="altSwitchPressed:" destination="Goj-Lo-IeQ" eventType="valueChanged" id="gFR-Nf-Pl0"/>
                                         </connections>
                                     </switch>
                                 </subviews>
@@ -999,7 +1037,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" restorationIdentifier="Alt2Selection" translatesAutoresizingMaskIntoConstraints="NO" id="4vu-ap-jOO" customClass="NewCourseView" customModule="MyCourseRequests" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="458" width="414" height="187"/>
+                                <rect key="frame" x="0.0" y="492" width="414" height="187"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternate 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sR7-hs-9yH">
                                         <rect key="frame" x="20" y="26" width="80.5" height="17"/>
@@ -1114,7 +1152,6 @@
                                         <rect key="frame" x="112.5" y="14" width="51" height="31"/>
                                         <color key="onTintColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="altSwitchPressed:" destination="Goj-Lo-IeQ" eventType="valueChanged" id="PTo-jA-fDz"/>
                                             <action selector="altSwitchPressed:" destination="4vu-ap-jOO" eventType="valueChanged" id="lJF-Np-w8S"/>
                                         </connections>
                                     </switch>
@@ -1158,8 +1195,18 @@
                                     <outlet property="teacher" destination="BpI-nW-t0R" id="qR1-gh-Ujh"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Course" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eql-Xk-wFd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="40"/>
+                                <color key="backgroundColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Vnu-3l-fc2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="24"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" restorationIdentifier="Alt3Selection" translatesAutoresizingMaskIntoConstraints="NO" id="L7z-zI-Oqc" customClass="NewCourseView" customModule="MyCourseRequests" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="645" width="414" height="187"/>
+                                <rect key="frame" x="0.0" y="679" width="414" height="162"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alternate 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijF-DJ-b9h">
                                         <rect key="frame" x="20" y="26" width="79.5" height="17"/>
@@ -1267,7 +1314,7 @@
                                         </subviews>
                                     </stackView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K8r-Oa-Bkm">
-                                        <rect key="frame" x="17" y="53" width="389" height="126"/>
+                                        <rect key="frame" x="17" y="53" width="389" height="101"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AsA-UY-3Zd">
@@ -1275,7 +1322,6 @@
                                         <color key="onTintColor" red="0.054901960780000002" green="0.30196078430000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="altSwitchPressed:" destination="L7z-zI-Oqc" eventType="valueChanged" id="1iV-bZ-jjC"/>
-                                            <action selector="altSwitchPressed:" destination="Goj-Lo-IeQ" eventType="valueChanged" id="Er2-tr-lko"/>
                                         </connections>
                                     </switch>
                                 </subviews>
@@ -1317,69 +1363,58 @@
                                     <outlet property="teacher" destination="wuu-q6-vVf" id="CpH-5z-rfv"/>
                                 </connections>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="270" translatesAutoresizingMaskIntoConstraints="NO" id="DkQ-tQ-9AE">
-                                <rect key="frame" x="28" y="833" width="358" height="29"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHk-zm-6qc">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="29"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="XZR-xB-Peh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
-                                        <state key="normal" title="Cancel"/>
-                                        <connections>
-                                            <action selector="cancel:" destination="22C-4H-fzY" eventType="touchUpInside" id="obQ-63-9cT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyE-rw-lqb">
-                                        <rect key="frame" x="320" y="0.0" width="38" height="29"/>
-                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
-                                        <state key="normal" title="Save"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DkQ-tQ-9AE" firstAttribute="leading" secondItem="Y0I-lX-kbw" secondAttribute="leading" constant="28" id="1X2-fk-pum"/>
                             <constraint firstItem="4vu-ap-jOO" firstAttribute="leading" secondItem="L7z-zI-Oqc" secondAttribute="leading" id="50l-8j-VkD"/>
                             <constraint firstItem="Moe-qx-RhP" firstAttribute="trailing" secondItem="ecO-gv-XZg" secondAttribute="trailing" id="5CG-mY-PRB"/>
                             <constraint firstItem="ecO-gv-XZg" firstAttribute="top" secondItem="Moe-qx-RhP" secondAttribute="top" id="6cQ-0K-PxU"/>
+                            <constraint firstItem="Eql-Xk-wFd" firstAttribute="top" secondItem="Y0I-lX-kbw" secondAttribute="top" id="85c-cy-TqS"/>
                             <constraint firstItem="4vu-ap-jOO" firstAttribute="bottom" secondItem="ecO-gv-XZg" secondAttribute="bottom" id="Bq8-h1-H2c"/>
-                            <constraint firstItem="Eql-Xk-wFd" firstAttribute="top" secondItem="Y0I-lX-kbw" secondAttribute="top" constant="10" id="CgB-hA-YNR"/>
                             <constraint firstItem="ecO-gv-XZg" firstAttribute="leading" secondItem="Moe-qx-RhP" secondAttribute="leading" id="FEW-d2-pzd"/>
                             <constraint firstItem="FjT-CJ-BHs" firstAttribute="trailing" secondItem="Moe-qx-RhP" secondAttribute="trailing" id="M3t-cP-yNa"/>
                             <constraint firstItem="Eql-Xk-wFd" firstAttribute="leading" secondItem="FG8-Af-cea" secondAttribute="leading" id="Mru-46-1Za"/>
                             <constraint firstItem="FjT-CJ-BHs" firstAttribute="leading" secondItem="Moe-qx-RhP" secondAttribute="leading" id="OEx-E0-UiL"/>
                             <constraint firstItem="Eql-Xk-wFd" firstAttribute="trailing" secondItem="FjT-CJ-BHs" secondAttribute="trailing" id="OyB-fg-esh"/>
-                            <constraint firstItem="DkQ-tQ-9AE" firstAttribute="centerX" secondItem="L7z-zI-Oqc" secondAttribute="centerX" id="P0B-co-ahU"/>
                             <constraint firstItem="ecO-gv-XZg" firstAttribute="top" secondItem="FjT-CJ-BHs" secondAttribute="bottom" id="TNk-zJ-tNT"/>
                             <constraint firstAttribute="trailing" secondItem="Eql-Xk-wFd" secondAttribute="trailing" id="USs-R5-Ftp"/>
-                            <constraint firstItem="DkQ-tQ-9AE" firstAttribute="bottom" secondItem="Y0I-lX-kbw" secondAttribute="bottom" id="XV8-vw-eRA"/>
                             <constraint firstItem="L7z-zI-Oqc" firstAttribute="top" secondItem="ecO-gv-XZg" secondAttribute="bottom" id="YpI-eM-WzD"/>
                             <constraint firstItem="ecO-gv-XZg" firstAttribute="leading" secondItem="4vu-ap-jOO" secondAttribute="leading" id="b5B-vG-PrD"/>
                             <constraint firstItem="ecO-gv-XZg" firstAttribute="trailing" secondItem="4vu-ap-jOO" secondAttribute="trailing" id="dBW-tN-sn6"/>
                             <constraint firstItem="4vu-ap-jOO" firstAttribute="trailing" secondItem="L7z-zI-Oqc" secondAttribute="trailing" id="gVo-Ky-EoW"/>
                             <constraint firstItem="Eql-Xk-wFd" firstAttribute="leading" secondItem="FjT-CJ-BHs" secondAttribute="leading" id="giE-pk-W3n"/>
-                            <constraint firstItem="DkQ-tQ-9AE" firstAttribute="top" secondItem="L7z-zI-Oqc" secondAttribute="bottom" constant="1" id="lBt-9h-3EV"/>
                             <constraint firstItem="4vu-ap-jOO" firstAttribute="top" secondItem="Moe-qx-RhP" secondAttribute="bottom" id="ltK-Lq-MzG"/>
+                            <constraint firstItem="Y0I-lX-kbw" firstAttribute="bottom" secondItem="L7z-zI-Oqc" secondAttribute="bottom" constant="21" id="mWk-OD-Vn0"/>
                             <constraint firstItem="FjT-CJ-BHs" firstAttribute="top" secondItem="Eql-Xk-wFd" secondAttribute="bottom" constant="1" id="oKg-dl-4P3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y0I-lX-kbw"/>
                     </view>
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="ds5-m7-SGJ">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="rF1-ln-f9D">
+                            <connections>
+                                <action selector="cancel:" destination="22C-4H-fzY" id="Ryb-6E-hPg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="VUe-WJ-jqY">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Goj-Lo-IeQ" kind="unwind" unwindAction="unwindToCourseSelectionWithSegue:" id="GS5-mB-z5F"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="alt1" destination="Moe-qx-RhP" id="Elq-rb-062"/>
                         <outlet property="alt2" destination="4vu-ap-jOO" id="Czc-9J-OeU"/>
                         <outlet property="alt3" destination="L7z-zI-Oqc" id="wB1-Od-S1q"/>
-                        <outlet property="cancelButton" destination="wHk-zm-6qc" id="j0U-2V-vJU"/>
+                        <outlet property="cancelButton" destination="rF1-ln-f9D" id="JsP-G2-ElG"/>
                         <outlet property="mainCourse" destination="FjT-CJ-BHs" id="Q2y-D7-FFj"/>
-                        <outlet property="saveButton" destination="NyE-rw-lqb" id="R8d-dU-ZOw"/>
+                        <outlet property="saveButton" destination="VUe-WJ-jqY" id="gkb-Cr-QnE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRp-5U-dlA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Goj-Lo-IeQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-851" y="-306"/>
+            <point key="canvasLocation" x="210" y="-327"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="g8a-Y5-cJx">
@@ -1590,7 +1625,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hnk-8f-1mO"/>
-        <segue reference="bjS-MT-8b9"/>
+        <segue reference="cN0-Yq-45q"/>
+        <segue reference="B76-MQ-WIi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -121,9 +121,28 @@ def handleCourseRequests(request):
 
 
         try:
-            courses = content["courses"] # should be an array of the courses' IDs
-            sixthCourse = content["sixthCourse"]
-            topPriority = content["topPriority"]
+            coursesString = content["courses"] # should be an array of the courses' IDs
+            courses = []
+            num = ""
+            count = 0
+            # parse string array, will look like "[[-1, 2, 3], [4, 5, 6]]"
+            tempCourses = []
+            for char in coursesString:
+                if char == '[':
+                    count += 1
+                if char == ']':
+                    courses.append(tempCourses)
+                    tempCourses = []
+                    count -= 1
+                elif char.isdigit() or char == "-":
+                    num += char
+                elif char == ',' and count > 1:
+                    tempCourses.append(int(num))
+                    num = ""
+
+            sixthCourse = int(content["sixthCourse"])
+            topPriority = int(content["topPriority"])
+
             sport = content["sport"] # should be the sport's ID
             mL = content["musicLesson"] # should be a dict in the proper musiclesson format
             comments = content["comments"]
@@ -131,7 +150,7 @@ def handleCourseRequests(request):
             return JsonResponse({'status':'false', 'message':"Unable to parse dictionary of params"}, status=401)
 
         try:
-            musicLesson = MusicLession(instrument=mL["instrument"], teacher=mL["teacher"],length=int(mL["length"]))
+            musicLesson = MusicLession(instrument=mL["instrument"], teacher=mL["teacher"],length=mL["length"])
             musicLesson.save()
         except:
             musicLesson = -1

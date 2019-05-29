@@ -13,7 +13,7 @@
 		07396717229592F400EDD2C1 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07396716229592F400EDD2C1 /* CourseTableViewCell.swift */; };
 		0739671B2296075200EDD2C1 /* GLOBAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739671A2296075200EDD2C1 /* GLOBAL.swift */; };
 		0739671D2296D27800EDD2C1 /* CRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739671C2296D27800EDD2C1 /* CRViewController.swift */; };
-		073967212296E65400EDD2C1 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073967202296E65400EDD2C1 /* Sport.swift */; };
+		073967212296E65400EDD2C1 /* SportSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073967202296E65400EDD2C1 /* SportSelection.swift */; };
 		073967232296FFAB00EDD2C1 /* NewCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073967222296FFAB00EDD2C1 /* NewCourseView.swift */; };
 		07396725229700B800EDD2C1 /* CustomSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07396724229700B800EDD2C1 /* CustomSearchTextField.swift */; };
 		07396749229704A000EDD2C1 /* MyData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07396747229704A000EDD2C1 /* MyData.xcdatamodeld */; };
@@ -37,7 +37,7 @@
 		07396716229592F400EDD2C1 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		0739671A2296075200EDD2C1 /* GLOBAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLOBAL.swift; sourceTree = "<group>"; };
 		0739671C2296D27800EDD2C1 /* CRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRViewController.swift; sourceTree = "<group>"; };
-		073967202296E65400EDD2C1 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
+		073967202296E65400EDD2C1 /* SportSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportSelection.swift; sourceTree = "<group>"; };
 		073967222296FFAB00EDD2C1 /* NewCourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCourseView.swift; sourceTree = "<group>"; };
 		07396724229700B800EDD2C1 /* CustomSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchTextField.swift; sourceTree = "<group>"; };
 		07396748229704A000EDD2C1 /* Course.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Course.xcdatamodel; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 				0739674C2297133700EDD2C1 /* Populate_Local_Data.swift */,
 				07396747229704A000EDD2C1 /* MyData.xcdatamodeld */,
 				07FA9D2F228B92330052084D /* CourseSearchItem.swift */,
-				073967202296E65400EDD2C1 /* Sport.swift */,
+				073967202296E65400EDD2C1 /* SportSelection.swift */,
 				07FA9D21228B90B70052084D /* Main.storyboard */,
 				07396724229700B800EDD2C1 /* CustomSearchTextField.swift */,
 				0739671C2296D27800EDD2C1 /* CRViewController.swift */,
@@ -185,7 +185,7 @@
 			files = (
 				2494AA55229D8406007FFB6A /* iOSDropDown.swift in Sources */,
 				0739671B2296075200EDD2C1 /* GLOBAL.swift in Sources */,
-				073967212296E65400EDD2C1 /* Sport.swift in Sources */,
+				073967212296E65400EDD2C1 /* SportSelection.swift in Sources */,
 				0739671D2296D27800EDD2C1 /* CRViewController.swift in Sources */,
 				0739674D2297133700EDD2C1 /* Populate_Local_Data.swift in Sources */,
 				2413C078229CDDFA00214BD1 /* NewCourseViewController.swift in Sources */,

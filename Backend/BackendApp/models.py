@@ -48,15 +48,15 @@ class Sport(models.Model):
 class MusicLesson(models.Model):
     instrument = models.CharField(max_length=45, default="none")
     teacher = models.CharField(max_length=60, default="none")
-    length = models.IntegerField(default=-1)
+    length = models.CharField(max_length=30, default="none")
     def __str__(self):
         return self.instrument + " (" + self.teacher + " | length: " + self.length + ")"
 
 class CourseRequest(models.Model):
     # OneToOneField not allowed within ArrayField, thus 2D Array of CharField stores courses
     hash_id = models.CharField(max_length=32)
-    term = models.CharField(max_length=30)
-    courses = ArrayField(models.IntegerField(default=-1))
+    term = models.CharField(max_length=30, default="Fall '19")
+    courses = ArrayField(ArrayField(models.IntegerField(default=-1)))
     #courses = ArrayField(ArrayField(models.CharField(max_length=30, default="none"))) # ArrayFields from https://stackoverflow.com/questions/44630642/its-possible-to-store-an-array-in-django-model
     # should correspond to the id of the course
     topPriority = models.IntegerField(default=-1)

@@ -38,7 +38,6 @@ class NewCourseView: UIView {
 //                self.isHidden = false
 //            }
         }
-        updateCourse(GLOBAL.DEFAULT_COURSE)
     }
     
     func updateCourse(_ crse: CourseSearchItem) {
@@ -63,7 +62,6 @@ class NewCourseView: UIView {
 
     
     @IBAction func resetMainCourse(_ sender: Any) {
-        
         updateCourse(GLOBAL.DEFAULT_COURSE)
         updateMainLabels("")
         searchField.isEnabled = true
