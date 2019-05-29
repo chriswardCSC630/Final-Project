@@ -2,6 +2,8 @@
 
 **Note to Dr. Z:** 
 
+Right at the finish line, when almost everything was working correctly, we attempted to change a field in the dable and the following error was thrown: `relation ____ already exists`. We’ve tried flushing the database, faking migrations, and looking up every line of the error– and as far as we could find in the limitted time we had, no common solutions work. All we were trying to do was make some edits to the table! Django is extremely frustrating sometimes.
+
 **Instructions**
 
 To run a simulation of the Course Requests app:
