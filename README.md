@@ -2,7 +2,9 @@
 
 **Note to Dr. Z:** 
 
-Right at the finish line, when almost everything was working correctly, we attempted to change a field in the dable and the following error was thrown: `relation ____ already exists`. We’ve tried flushing the database, faking migrations, and looking up every line of the error– and as far as we could find in the limitted time we had, no common solutions work. All we were trying to do was make some edits to the table! Django is extremely frustrating sometimes. We have a screenrecording from when it was working properly that we can email to you if you would like.
+Right at the finish line, when almost everything was working correctly, we attempted to change a field in the dable and the following error was thrown: `relation ____ already exists`. We’ve tried flushing the database, faking migrations, and looking up every line of the error– and as far as we could find in the limitted time we had, no common solutions work. All we were trying to do was make some edits to the table! Django is extremely frustrating sometimes.
+
+For a screen recording of the previously functioning app see the zipped folder submitted to canvas.
 
 **Instructions**
 
