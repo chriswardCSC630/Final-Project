@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i1o-8N-odz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dMt-h0-sTx">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -453,11 +453,11 @@
                                         <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" restorationIdentifier="MainSelection" translatesAutoresizingMaskIntoConstraints="NO" id="dGr-iv-M6e" customClass="NewCourseView" customModule="MyCourseRequests" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGr-iv-M6e" customClass="NewCourseView" customModule="MyCourseRequests" customModuleProvider="target">
                                         <rect key="frame" x="8" y="426" width="378" height="93"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter course name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LJD-kL-gBf" customClass="CustomSearchTextField" customModule="MyCourseRequests" customModuleProvider="target">
-                                                <rect key="frame" x="12" y="34" width="156" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter sport name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LJD-kL-gBf" customClass="CustomSearchTextField" customModule="MyCourseRequests" customModuleProvider="target">
+                                                <rect key="frame" x="12" y="34" width="147" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -540,10 +540,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" restorationIdentifier="MainSelection" translatesAutoresizingMaskIntoConstraints="NO" id="IF7-6v-Lbs" customClass="NewCourseView" customModule="MyCourseRequests" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="527" width="378" height="93"/>
+                                        <rect key="frame" x="8" y="527" width="378" height="107"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name of instrument" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vjj-2z-oIf">
-                                                <rect key="frame" x="12" y="34" width="203" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name of instrument" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vjj-2z-oIf">
+                                                <rect key="frame" x="12" y="34" width="208.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -558,8 +558,8 @@
                                                 <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name of teacher" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jVV-n5-PBR">
-                                                <rect key="frame" x="12" y="71" width="203" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name of teacher" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jVV-n5-PBR">
+                                                <rect key="frame" x="12" y="71" width="209" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -573,8 +573,8 @@
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name of teacher" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O0U-fW-fPZ" customClass="DropDown" customModule="MyCourseRequests" customModuleProvider="target">
-                                                <rect key="frame" x="281" y="69" width="85" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Length" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O0U-fW-fPZ" customClass="DropDown" customModule="MyCourseRequests" customModuleProvider="target">
+                                                <rect key="frame" x="278" y="69" width="88" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -584,18 +584,22 @@
                                         <constraints>
                                             <constraint firstItem="Vzw-RJ-QK1" firstAttribute="trailing" secondItem="O0U-fW-fPZ" secondAttribute="trailing" id="AC6-nn-XoW"/>
                                             <constraint firstItem="Vjj-2z-oIf" firstAttribute="top" secondItem="Vzw-RJ-QK1" secondAttribute="bottom" constant="8" symbolic="YES" id="Cq1-FZ-gqa"/>
+                                            <constraint firstItem="jVV-n5-PBR" firstAttribute="leading" secondItem="IF7-6v-Lbs" secondAttribute="leading" constant="12" id="GJV-fz-9HI"/>
                                             <constraint firstItem="Vzw-RJ-QK1" firstAttribute="leading" secondItem="Vjj-2z-oIf" secondAttribute="leading" id="OMr-Gu-1eA"/>
                                             <constraint firstItem="bvU-Hj-dsd" firstAttribute="top" secondItem="Vzw-RJ-QK1" secondAttribute="bottom" constant="8" symbolic="YES" id="P8K-bg-9J3"/>
-                                            <constraint firstAttribute="height" constant="93" id="RI7-e4-JSi"/>
+                                            <constraint firstAttribute="height" constant="107" id="RI7-e4-JSi"/>
                                             <constraint firstItem="Vzw-RJ-QK1" firstAttribute="top" secondItem="IF7-6v-Lbs" secondAttribute="top" constant="4" id="WcB-fl-rhR"/>
+                                            <constraint firstItem="jVV-n5-PBR" firstAttribute="top" secondItem="Vjj-2z-oIf" secondAttribute="bottom" constant="7" id="aOd-p8-Leb"/>
                                             <constraint firstItem="Vzw-RJ-QK1" firstAttribute="leading" secondItem="IF7-6v-Lbs" secondAttribute="leading" constant="12" id="ctr-S1-x2a"/>
                                             <constraint firstItem="Vzw-RJ-QK1" firstAttribute="trailing" secondItem="bvU-Hj-dsd" secondAttribute="trailing" id="dEv-Ia-cY7"/>
                                             <constraint firstItem="Vzw-RJ-QK1" firstAttribute="centerX" secondItem="IF7-6v-Lbs" secondAttribute="centerX" id="dpI-w1-7sb"/>
+                                            <constraint firstAttribute="trailing" secondItem="O0U-fW-fPZ" secondAttribute="trailing" constant="12" id="iej-Y9-B7Z"/>
+                                            <constraint firstItem="O0U-fW-fPZ" firstAttribute="top" secondItem="bvU-Hj-dsd" secondAttribute="bottom" constant="18" id="jjo-oC-YR4"/>
                                             <constraint firstItem="Vzw-RJ-QK1" firstAttribute="leading" secondItem="jVV-n5-PBR" secondAttribute="leading" id="zhm-eh-MOC"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter additional comments" borderStyle="roundedRect" placeholder="Enter name of teacher" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fXN-s1-Xzb">
-                                        <rect key="frame" x="8" y="642" width="378" height="30"/>
+                                        <rect key="frame" x="8" y="644" width="378" height="30"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -610,7 +614,7 @@
                                     <constraint firstItem="C94-wi-BkW" firstAttribute="trailing" secondItem="lJX-IT-3PD" secondAttribute="trailing" id="8wq-2N-KPU"/>
                                     <constraint firstItem="lJX-IT-3PD" firstAttribute="centerX" secondItem="S0Y-tF-bxK" secondAttribute="centerX" id="Acv-9P-xpN"/>
                                     <constraint firstItem="dGr-iv-M6e" firstAttribute="top" secondItem="2Cy-9l-3aT" secondAttribute="bottom" constant="8" symbolic="YES" id="Ajh-ds-vEs"/>
-                                    <constraint firstItem="fXN-s1-Xzb" firstAttribute="top" secondItem="IF7-6v-Lbs" secondAttribute="bottom" constant="22" id="Bhv-t4-GjI"/>
+                                    <constraint firstItem="fXN-s1-Xzb" firstAttribute="top" secondItem="IF7-6v-Lbs" secondAttribute="bottom" constant="10" id="Bhv-t4-GjI"/>
                                     <constraint firstItem="dGr-iv-M6e" firstAttribute="leading" secondItem="S0Y-tF-bxK" secondAttribute="leadingMargin" id="D22-em-GeB"/>
                                     <constraint firstItem="C94-wi-BkW" firstAttribute="leading" secondItem="lJX-IT-3PD" secondAttribute="leading" id="DYX-0s-FIW"/>
                                     <constraint firstItem="lJX-IT-3PD" firstAttribute="top" secondItem="S0Y-tF-bxK" secondAttribute="top" id="Kop-P7-RZa"/>
@@ -649,7 +653,6 @@
                     <connections>
                         <outlet property="addNewCourseButton" destination="W17-XU-VO7" id="OjI-Ar-Unr"/>
                         <outlet property="courseTableView" destination="C94-wi-BkW" id="oYc-TW-8iI"/>
-                        <outlet property="lengthLabel" destination="bvU-Hj-dsd" id="FU9-Yp-UUC"/>
                         <outlet property="musicLessonLength" destination="O0U-fW-fPZ" id="Vwu-Au-Yba"/>
                         <outlet property="name" destination="Xbb-nN-RHr" id="Pgd-Ta-jE2"/>
                         <outlet property="plusNewCourseButton" destination="mkg-2m-geK" id="fYL-Dq-Pwv"/>
@@ -1561,6 +1564,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rbR-tF-Qf6"/>
+        <segue reference="Nyx-GY-OP2"/>
+        <segue reference="bjS-MT-8b9"/>
     </inferredMetricsTieBreakers>
 </document>

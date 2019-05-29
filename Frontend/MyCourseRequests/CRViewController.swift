@@ -167,7 +167,8 @@ class CRViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return allCourses.count
+//        return allCourses.count
+        return 0
     }
     
     
@@ -178,7 +179,7 @@ class CRViewController: UIViewController, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CourseTableViewCell else {
             fatalError("The dequeued cell is not an instance of CourseTableViewCell.")
         }
-        
+        /*
         // Fetches the appropriate course for the data source layout
         let courseGroup = courseGroups[indexPath.row]
         cell.mainCourse.text = courseGroup[0].title
@@ -189,7 +190,7 @@ class CRViewController: UIViewController, UITableViewDataSource {
         cell.alt2Period.text = String(courseGroup[2].period)
         cell.alt3.text = courseGroup[3].title
         cell.alt3Period.text = String(courseGroup[3].period)
-
+        */
         // Configure the cell...
         
         return cell
